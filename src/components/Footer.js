@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import FormSearch from '../components/FormSearch'
-import '../containers/Footer.css'
+import '../components/Footer.css'
 
 export default class Footer extends Component {
     render() {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Jumbotron, Row, Col } from 'reactstrap';
 import FormSearch from '../components/FormSearch'
 import CardChambre from '../components/CardChambre'
-import '../containers/Body.css'
+import '../components/BodyHome.css'
 
 export default class Body extends Component {
     render() {

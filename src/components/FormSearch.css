@@ -1,0 +1,9 @@
+.form-inline .form-group {
+    margin-right:10px;
+  }
+
+  #NbrPersonne {
+        height: 100%;
+        width: 100%;
+        padding: 12px 20px;
+  }

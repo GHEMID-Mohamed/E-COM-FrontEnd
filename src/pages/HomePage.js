@@ -10,6 +10,8 @@ export default class HomePage extends Component {
             <div>
                 <Header></Header>
                 <BodyHome></BodyHome>
+                <hr />
+                <br />
                 <Footer></Footer>
             </div>
         );

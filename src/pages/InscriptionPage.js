@@ -13,6 +13,8 @@ export default class InscriptionPage extends Component {
                     <Container>
                         <Header></Header>
                         <InputSignUp></InputSignUp>
+                        <br />
+                        <br />
                         <Footer></Footer>
                     </Container>
                 </div>

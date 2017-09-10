@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'reactstrap'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import InputSignUp from '../components/InputSignUp'
 
 
 export default class InscriptionPage extends Component {
@@ -11,6 +12,7 @@ export default class InscriptionPage extends Component {
                 <div className="App">
                     <Container>
                         <Header></Header>
+                        <InputSignUp></InputSignUp>
                         <Footer></Footer>
                     </Container>
                 </div>

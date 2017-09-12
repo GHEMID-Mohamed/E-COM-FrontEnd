@@ -9,8 +9,11 @@ export default class HomePage extends Component {
         return (
             <div>
                 <Header></Header>
-                <BodyHome></BodyHome>
                 <hr />
+                <br />
+                <BodyHome></BodyHome>
+                <br />
+                <br />
                 <br />
                 <Footer></Footer>
             </div>

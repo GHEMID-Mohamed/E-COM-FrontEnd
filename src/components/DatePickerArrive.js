@@ -23,6 +23,7 @@ export default class DatePickerArrive extends Component {
         return <DatePicker
             className="DatePicker"
             dateFormat="DD/MM/YYYY"
+            minDate={moment()}
             selected={this.state.startDate}
             onChange={this.handleChange}
             placeholderText="Arrivée"

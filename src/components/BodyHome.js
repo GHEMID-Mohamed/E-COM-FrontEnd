@@ -19,8 +19,9 @@ export default class Body extends Component {
                     <hr className="my-2" />
                 </Row>
                 <Row>
-                    <Col md="1"></Col>
-                    <Col md="11" >  <FormSearch></FormSearch> </Col>
+                    <Col md={{ size: 10, offset: 1 }}>
+                    <FormSearch></FormSearch>
+                     </Col>
                 </Row>
                 <Row><Col md="12"><hr /></Col></Row>
                 <Row>

@@ -1,7 +1,12 @@
 .DatePicker {
-    width: 100%;
+    width: 200px;
     height: 100%;
     padding: 12px 20px;
     border: 1px solid #353535;
     border-radius:5px;
+    background-image: url("http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: right; 
+    
 }

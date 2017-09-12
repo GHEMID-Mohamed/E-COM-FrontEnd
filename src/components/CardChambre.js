@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     Card, CardImg, CardText, CardBlock,
-    CardTitle, CardSubtitle, Button
+    CardTitle, CardSubtitle, Button, Input, Row, Col, Alert
 } from 'reactstrap';
 
 export default class CardChambre extends Component {
@@ -11,10 +11,46 @@ export default class CardChambre extends Component {
                 <Card>
                     <CardImg top width="100%" src={this.props.src} alt="Chambre" />
                     <CardBlock>
-                        <CardTitle>Chambre {this.props.nombreDePersonne} personne</CardTitle>
+                        <CardTitle>
+                            <Row>
+                                <Col>
+                                    Nombre d'adultes {this.props.nombreDadulte}
+                                </Col>
+                            </Row>
+                        </CardTitle>
                         <CardSubtitle>{this.props.nombreDeLit} lit</CardSubtitle>
-                        <CardText>Profitez d’une chambre pouvant accueillir 1 ou 2 personnes avec un matelas de qualité et des oreillers moelleux. Vous disposerez d’une salle de bain privée équipée d’une douchette XXL, de toilettes, de serviettes et d’un tapis de bain. N'hésitez plus !</CardText>
-                        <Button color="danger">Reserver</Button>
+                        <br />
+                        <CardText>
+
+                            <Alert color="danger">
+                                Tarif pour 2 adultes et 2 enfants pour 1 nuit: <strong>€ 133</strong>
+                            </Alert>
+
+                            <br />
+                            <Row>
+                                <Col>
+                                    <label> Chambres </label>
+                                </Col>
+                                <Col>
+                                    <Input type="select" name="NbrPersonne" id="NbrPersonne">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                    </Input>
+                                </Col>
+                            </Row>
+                            <strong>{this.props.prix}</strong></CardText>
+                        <Button color="danger">
+                            <img src="https://www.dmanetwork.com/share/dma/gfx/icon-add-grey.png"
+                                height="20" width="20" />
+                            Ajouter au panier
+                            </Button>
                     </CardBlock>
                 </Card>
             </div>

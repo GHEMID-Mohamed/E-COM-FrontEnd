@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Link } from 'react-router-dom'
 import DatePickerDepart from '../components/DatePickerDepart'
 import DatePickerArrive from '../components/DatePickerArrive'
 import InputDestination from '../components/InputDestination'
@@ -10,17 +11,24 @@ export default class FormSearch extends Component {
     render() {
         return (
             <div>
+
                 <Form inline>
+                    <img src="https://st2.depositphotos.com/6323354/11163/v/950/depositphotos_111633542-stock-illustration-map-pointer-icon-gps-location.jpg"
+                        height="50" width="50" />
                     <FormGroup>
                         <InputDestination></InputDestination>
                     </FormGroup>
                     {' '}
                     <FormGroup>
+
                         <DatePickerArrive></DatePickerArrive>
+
                     </FormGroup>
                     {' '}
                     <FormGroup>
+
                         <DatePickerDepart></DatePickerDepart>
+
                     </FormGroup>
                     {' '}
                     <FormGroup>
@@ -33,12 +41,16 @@ export default class FormSearch extends Component {
                         </Input>
                     </FormGroup> {' '}
 
+                    <Link to="/resultat">
                     <Button color="danger" size="md">
-                        <img src="http://www.iconsdb.com/icons/preview/white/search-3-xxl.png" height="20" width="20" />
+                       
+                            <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
+                        
                     </Button>{' '}
+                    </Link>
 
                 </Form>
-                
+
             </div>
         );
     }

@@ -7,7 +7,7 @@ export default class NavBar extends Component {
             <div>
                 <Nav pills>
                     <NavItem>
-                        <NavLink href="#" active>Accueil</NavLink>
+                        <NavLink href="/" active>Accueil</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="#">Nos meilleures offres</NavLink>

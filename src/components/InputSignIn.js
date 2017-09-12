@@ -25,7 +25,7 @@ export default class InputSignIn extends React.Component {
                 <Row>
                     <Col md="4"><Button color="danger">Connexion</Button></Col>
                     <Col md="4">
-                        <a href="#">Mot de passe oublié ?</a>
+                        <Link to="/passOublier">Mot de passe oublié ?</Link>
                     </Col>
                     <Col md="4">
                         <Link to="/inscription">Créer votre compte Client Pyramide</Link>

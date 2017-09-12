@@ -23,6 +23,8 @@ export default class DatePickerDepart extends Component {
     return <DatePicker
         className="DatePicker"
         dateFormat="DD/MM/YYYY"
+        minDate={moment()}
+        excludeDates={[moment(), moment().subtract(1, "days")]}
         selected={this.state.startDate}
         onChange={this.handleChange}
         placeholderText="Arrivée"

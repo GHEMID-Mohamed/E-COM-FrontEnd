@@ -11,75 +11,95 @@ export default class Resultat extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            price : 0,
-            type_chambre: '',
-            nombre_chambre: ''
+            prix : 0,
+            nomHotel : '',
+            adressHotel : '',
+            nbrAdulte : 0,
+            nbrEnfant : 0,
+            nbrChambre : 0
         }
+
+        this.goListenButtonInChambre = this.goListenButtonInChambre.bind(this)
     }
 
 
+    goListenButtonInChambre(event, prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre) {
+        this.setState({
+            prix : Number(prix),
+            nomHotel : nomHotel,
+            adressHotel : adressHotel,
+            nbrAdulte : Number(nbrAdulte),
+            nbrEnfant : Number(nbrEnfant),
+            nbrChambre : Number(nbrChambre)
+
+        })
+    }
 
     render() {
 
         var chambres = []
 
         for (var i = 0; i < 3; i++) {
-            if(i==0) {
+            if (i == 0) {
                 chambres.push(<span className='chambres' key={i}>
-                <Row>
-                <Col md="3">
-                    <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                        nombreDeLit="2"
-                        nombreDePersonne="2"
-                    >
-                    </CardChambre>
-                </Col>
-                <Col md="3">
-                    <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                        nombreDeLit="2"
-                        nombreDePersonne="2"
-                    >
-                    </CardChambre>
-                </Col>
-                <Col md="3">
-                    <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                        nombreDeLit="2"
-                        nombreDePersonne="2"
-                    >
-                    </CardChambre>
-                </Col>          
-                <Col md="3"><CardPanier></CardPanier></Col>      
-            </Row>
-            </span>)
+                    <Row>
+                        <Col md="4">
+                            <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+                                nombreDadultes="2"
+                                nombreEnfants="2"
+                                nombreChambres="3"
+                                prix="45"
+                                nomHotel="Pyramide Millénuim"
+                                adresseHotel="01 Rue Jean Léoquet"
+                            >
+                            </CardChambre>
+                        </Col>
+                        <Col md="4">
+                            <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+                                nombreDadultes="2"
+                                nombreEnfants="2"
+                                nombreChambres="3"
+                                prix="45"
+                                nomHotel="Pyramide Millénuim"
+                                adresseHotel="01 Rue Jean Léoquet"
+                            >
+                            </CardChambre>
+                        </Col>
+                        <Col md="1"></Col>
+                        <Col md="3"><CardPanier></CardPanier></Col>
+                    </Row>
+                </span>)
             }
-            else 
-            chambres.push(<span className='chambres' key={i}>
+            else
+                chambres.push(<span className='chambres' key={i}>
 
-                <Row>
-                    <Col md="3">
-                        <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                            nombreDeLit="2"
-                            nombreDePersonne="2"
-                        >
-                        </CardChambre>
-                    </Col>
-                    <Col md="3">
-                        <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                            nombreDeLit="2"
-                            nombreDePersonne="2"
-                        >
-                        </CardChambre>
-                    </Col>
-                    <Col md="3">
-                        <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                            nombreDeLit="2"
-                            nombreDePersonne="2"
-                        >
-                        </CardChambre>
-                    </Col>                
-                </Row>
+                    <Row>
+                        <Col md="4">
+                            <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+                                nombreDadultes="2"
+                                nombreEnfants="2"
+                                nombreChambres="3"
+                                prix="45"
+                                nomHotel="Pyramide Millénuim"
+                                adresseHotel="01 Rue Jean Léoquet"
+                            >
+                            </CardChambre>
+                        </Col>
+                        <Col md="4">
+                            <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+                                nombreDadultes="2"
+                                nombreEnfants="2"
+                                nombreChambres="3"
+                                prix="45"
+                                nomHotel="Pyramide Millénuim"
+                                adresseHotel="01 Rue Jean Léoquet"
+                            >
+                            </CardChambre>
+                        </Col>
 
-            </span>);
+                    </Row>
+
+                </span>);
         }
 
         return (
@@ -88,7 +108,7 @@ export default class Resultat extends Component {
                 <Row>
                     <Col md="6">
                         {/*Hotel trouvé*/}
-                        <h3><strong>Hotel trouvé !</strong></h3>
+                        <h3><strong>Résultat de la recherche</strong></h3>
                         <hr />
                     </Col>
 
@@ -114,11 +134,11 @@ export default class Resultat extends Component {
                             <strong>Récapitulatif de votre recherche :</strong> {/*Nombre de nuit*/} du {/*Date arrivé*/} au {/*Date arrivé*/}.
                         </Alert>
                     </Col>
-                    
+
 
                 </Row>
 
-                
+
 
                 {/* Chambre trouvé */}
                 {chambres}

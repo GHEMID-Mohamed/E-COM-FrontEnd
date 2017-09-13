@@ -11,12 +11,17 @@ export default class DatePickerDepart extends Component {
       startDate: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   handleChange(date) {
     this.setState({
       startDate: date
     });
+  }
+
+  handleSelect(date) {
+    this.props.goGetDateDepart(date.format('DD MM YYYY'))
   }
 
   render() {
@@ -27,7 +32,8 @@ export default class DatePickerDepart extends Component {
         excludeDates={[moment(), moment().subtract(1, "days")]}
         selected={this.state.startDate}
         onChange={this.handleChange}
-        placeholderText="Arrivée"
+        onSelect={this.handleSelect}
+        placeholderText="Départ"
     />;
   }
 }

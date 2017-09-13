@@ -11,12 +11,19 @@ export default class DatePickerArrive extends Component {
           startDate: ''
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
       }
     
       handleChange(date) {
         this.setState({
           startDate: date
-        });
+        })
+
+        
+      }
+
+      handleSelect(date) {
+        this.props.goGetDateArrive(date.format('DD MM YYYY'))
       }
     
       render() {
@@ -25,6 +32,7 @@ export default class DatePickerArrive extends Component {
             dateFormat="DD/MM/YYYY"
             minDate={moment()}
             selected={this.state.startDate}
+            onSelect={this.handleSelect}
             onChange={this.handleChange}
             placeholderText="Arrivée"
         />;

@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
 import {
     Card, CardImg, CardText, CardBlock,
-    CardTitle, CardSubtitle, Button, Input, Row, Col, Alert
+    CardTitle, CardSubtitle, Button, Input, Row, Col, Alert, Badge
 } from 'reactstrap';
+import '../components/CardChambre.css'
 
 export default class CardChambre extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.handleClickAjouter = this.handleClickAjouter.bind(this)
+        
+    }
+
+    handleClickAjouter(event) {
+        //console.log(event)
+        this.props.listenButton(event, this.props.prix, this.props.nomHotel, this.props.adresseHotel, this.props.nombreDadultes, this.nombreEnfants, this.nombreChambres)
+    }
+
+
     render() {
         return (
             <div>
@@ -13,40 +28,76 @@ export default class CardChambre extends Component {
                     <CardBlock>
                         <CardTitle>
                             <Row>
-                                <Col>
-                                    Nombre d'adultes {this.props.nombreDadulte}
+                                <Col md="9">
+                                    {this.props.nomHotel}
+                                </Col>
+                                <Col md="3  ">
+                                    <Badge color="info" pill>
+                                        <strong>Hotel</strong>
+                                    </Badge>{' '}
                                 </Col>
                             </Row>
-                        </CardTitle>
-                        <CardSubtitle>{this.props.nombreDeLit} lit</CardSubtitle>
-                        <br />
-                        <CardText>
 
-                            <Alert color="danger">
-                                Tarif pour 2 adultes et 2 enfants pour 1 nuit: <strong>€ 133</strong>
-                            </Alert>
+                        </CardTitle>
+                        <CardSubtitle>
 
                             <br />
                             <Row>
+                                <Col>Adresse : </Col>
+                                <Col><p>{this.props.adresseHotel}</p></Col>
+                            </Row>
+                            <br />
+                            <Row>
                                 <Col>
-                                    <label> Chambres </label>
+                                    Nombre de chambres
                                 </Col>
                                 <Col>
-                                    <Input type="select" name="NbrPersonne" id="NbrPersonne">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                    </Input>
+                                    <p>{this.props.nombreChambres}</p>
                                 </Col>
                             </Row>
-                            <strong>{this.props.prix}</strong></CardText>
-                        <Button color="danger">
+                        </CardSubtitle>
+                        <br />
+
+                        <CardSubtitle>
+                            <Row>
+                                <Col>
+                                    Nombre d'adultes
+                                </Col>
+                                <Col>
+                                    <p>{this.props.nombreDadultes}</p>
+                                </Col>
+                            </Row>
+                        </CardSubtitle>
+                        <br />
+
+                        <CardSubtitle>
+                            <Row>
+                                <Col>
+                                    Nombre d'enfants
+                                </Col>
+                                <Col>
+                                    <p>{this.props.nombreEnfants}</p>
+                                </Col>
+                            </Row>
+                        </CardSubtitle>
+
+
+                        <CardText>
+
+                            <Row>
+                                <Col md="3">Prix :</Col>
+                                <Col>
+                                    <h3><Badge color="primary" pill>
+                                        <strong>€ {this.props.prix}</strong>
+                                    </Badge>{' '}</h3>
+                                </Col>
+                            </Row>
+
+
+
+
+                        </CardText>
+                        <Button color="danger" onClick={this.handleClickAjouter}>
                             <img src="https://www.dmanetwork.com/share/dma/gfx/icon-add-grey.png"
                                 height="20" width="20" />
                             Ajouter au panier

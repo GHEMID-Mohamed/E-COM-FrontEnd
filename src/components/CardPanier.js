@@ -14,16 +14,38 @@ export default class CardPanier extends Component {
         super(props)
 
         this.state = {
-            info: this.props.info
+            prix: this.props.prix,
+            nomHotel: this.props.nomHotel,
+            adressHotel: this.props.adressHotel,
+            nbrAdulte: this.props.nbrAdulte,
+            nbrEnfant: this.props.nbrEnfant,
+            nbrChambre: this.props.nbrChambre,
+            nbrLit: this.props.nbrLit,
+            visible: true
         }
+
+        this.onDismiss = this.onDismiss.bind(this);
+    }
+
+    onDismiss() {
+        this.setState({ visible: false });
     }
 
     componentWillReceiveProps(nextProps) {
-        if( this.state.info !== nextProps.info   ) {
-            this.setState({ info: nextProps.info})
-        }
 
-   
+        this.setState({
+            prix: nextProps.prix,
+            nomHotel: nextProps.nomHotel,
+            adressHotel: nextProps.adressHotel,
+            nbrAdulte: nextProps.nbrAdulte,
+            nbrEnfant: nextProps.nbrEnfant,
+            nbrChambre: nextProps.nbrChambre,
+            nbrLit: nextProps.nbrLit
+        })
+
+        console.log(nextProps.nbrEnfant)
+
+
     }
 
 
@@ -39,13 +61,29 @@ export default class CardPanier extends Component {
                         <CardBlock>
                             <CardTitle>Votre reservation </CardTitle>
 
-                            <Alert color="info">
-                                2 Chambre 1-2 personnes 1 grand lit pour 1 nuit
+                            <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
+                                <Row>
+                                    <Col><h5>{this.state.nomHotel}</h5></Col>
+                                </Row>
+                                <Row>
+                                    <Col md="2"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
+                                        height="30" width="20" /></Col>
+                                    <Col md="10"><h6>{this.state.adressHotel}</h6></Col>
+                                </Row>
+                                <Row>
+                                    <Col><h7>{this.state.nbrAdulte} adulte(s)</h7></Col>
+                                </Row>
+                                <Row>
+                                    <Col><h7>{this.state.nbrEnfant} enfant(s)</h7></Col>
+                                </Row>
+                                <Row>
+                                    <Col><h7>{this.state.nbrChambre} chambre(s)</h7></Col>
+                                </Row>
                             </Alert>
                             <CardText>
                                 <Row>
                                     <Col>
-                                        <p>Totale </p><h3><strong> {this.state.info} € </strong></h3>
+                                        <p>Totale </p><h3><strong> {this.state.prix} € </strong></h3>
                                     </Col>
                                 </Row>
                             </CardText>

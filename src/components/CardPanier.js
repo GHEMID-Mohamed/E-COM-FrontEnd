@@ -14,30 +14,21 @@ export default class CardPanier extends Component {
         super(props)
 
         this.state = {
-            infos: []
+            info: this.props.info
         }
     }
 
-    ComponentWillReceiveProps(nextProps) {
-        if(nextProps.infos !== this.state.infos ) {
-            this.setState({ infos: this.state.infos.push(nextProps.infos)})
+    componentWillReceiveProps(nextProps) {
+        if( this.state.info !== nextProps.info   ) {
+            this.setState({ info: nextProps.info})
         }
 
-        console.log(this.nextProps.infos)
+   
     }
-
 
 
     render() {
 
-
-        var chambres = []
-        for (var i = 0; i < this.state.infos.length; i++) {
-                chambres.push(<span className='chambres' key={i}>
-
-                        </span>
-                )
-        }
 
         return (
 
@@ -54,7 +45,7 @@ export default class CardPanier extends Component {
                             <CardText>
                                 <Row>
                                     <Col>
-                                        <p>Totale </p><h3><strong> {this.props.prix} € </strong></h3>
+                                        <p>Totale </p><h3><strong> {this.state.info} € </strong></h3>
                                     </Col>
                                 </Row>
                             </CardText>

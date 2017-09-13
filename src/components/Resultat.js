@@ -16,24 +16,31 @@ export default class Resultat extends Component {
             adressHotel : '',
             nbrAdulte : 0,
             nbrEnfant : 0,
-            nbrChambre : 0
+            nbrChambre : 0,
+            nbrLit : 0
         }
 
         this.goListenButtonInChambre = this.goListenButtonInChambre.bind(this)
     }
 
-
-    goListenButtonInChambre(event, prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre) {
+   
+    goListenButtonInChambre(event, prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
         this.setState({
             prix : Number(prix),
             nomHotel : nomHotel,
             adressHotel : adressHotel,
             nbrAdulte : Number(nbrAdulte),
             nbrEnfant : Number(nbrEnfant),
-            nbrChambre : Number(nbrChambre)
+            nbrChambre : Number(nbrChambre),
+            nbrLit : Number(nbrLit)
 
         })
+
+        console.log('button ajouter clicked')
+
     }
+
+    
 
     render() {
 
@@ -48,6 +55,7 @@ export default class Resultat extends Component {
                                 nombreDadultes="2"
                                 nombreEnfants="2"
                                 nombreChambres="3"
+                                nombreLits = "2"
                                 prix="45"
                                 nomHotel="Pyramide Millénuim"
                                 adresseHotel="01 Rue Jean Léoquet"
@@ -59,6 +67,7 @@ export default class Resultat extends Component {
                                 nombreDadultes="2"
                                 nombreEnfants="2"
                                 nombreChambres="3"
+                                nombreLits = "2"
                                 prix="45"
                                 nomHotel="Pyramide Millénuim"
                                 adresseHotel="01 Rue Jean Léoquet"
@@ -66,7 +75,7 @@ export default class Resultat extends Component {
                             </CardChambre>
                         </Col>
                         <Col md="1"></Col>
-                        <Col md="3"><CardPanier></CardPanier></Col>
+                        <Col md="3"><CardPanier info={this.state.prix}></CardPanier></Col>
                     </Row>
                 </span>)
             }
@@ -79,6 +88,7 @@ export default class Resultat extends Component {
                                 nombreDadultes="2"
                                 nombreEnfants="2"
                                 nombreChambres="3"
+                                nombreLits = "2"
                                 prix="45"
                                 nomHotel="Pyramide Millénuim"
                                 adresseHotel="01 Rue Jean Léoquet"
@@ -90,6 +100,7 @@ export default class Resultat extends Component {
                                 nombreDadultes="2"
                                 nombreEnfants="2"
                                 nombreChambres="3"
+                                nombreLits = "2"
                                 prix="45"
                                 nomHotel="Pyramide Millénuim"
                                 adresseHotel="01 Rue Jean Léoquet"

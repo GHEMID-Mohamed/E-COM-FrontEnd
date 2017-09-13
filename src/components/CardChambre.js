@@ -16,7 +16,7 @@ export default class CardChambre extends Component {
 
     handleClickAjouter(event) {
         //console.log(event)
-        this.props.listenButton(event, this.props.prix, this.props.nomHotel, this.props.adresseHotel, this.props.nombreDadultes, this.nombreEnfants, this.nombreChambres)
+        this.props.listenButton(event, this.props.prix, this.props.nomHotel, this.props.adresseHotel, this.props.nombreDadultes, this.nombreEnfants, this.nombreChambres, this.nombreLits)
     }
 
 
@@ -55,8 +55,13 @@ export default class CardChambre extends Component {
                                     <p>{this.props.nombreChambres}</p>
                                 </Col>
                             </Row>
+                            <br />
+                            <Row>
+                                <Col>Nombre de lits : </Col>
+                                <Col><p>{this.props.nombreLits}</p></Col>
+                            </Row>
+                            <br />
                         </CardSubtitle>
-                        <br />
 
                         <CardSubtitle>
                             <Row>

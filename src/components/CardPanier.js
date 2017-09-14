@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {
     Card, CardImg, CardText, CardBlock,
-    CardTitle, CardSubtitle, Button, Jumbotron, Col, Row, Alert
+    CardTitle, CardSubtitle, Button, Jumbotron, Col, Row, Alert, Badge
 } from 'reactstrap';
 import Sticky from 'react-sticky-el'
+import './CardPanier.css'
 
 
 
@@ -63,34 +64,32 @@ export default class CardPanier extends Component {
 
                             <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
                                 <Row>
-                                    <Col><h5>{this.state.nomHotel}</h5></Col>
+                                    <Col><h6>{this.state.nomHotel}</h6></Col>
                                 </Row>
                                 <Row>
-                                    <Col md="2"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
-                                        height="30" width="20" /></Col>
-                                    <Col md="10"><h6>{this.state.adressHotel}</h6></Col>
-                                </Row>
-                                <Row>
-                                    <Col><h7>{this.state.nbrAdulte} adulte(s)</h7></Col>
-                                </Row>
-                                <Row>
-                                    <Col><h7>{this.state.nbrEnfant} enfant(s)</h7></Col>
-                                </Row>
-                                <Row>
-                                    <Col><h7>{this.state.nbrChambre} chambre(s)</h7></Col>
-                                </Row>
-                            </Alert>
-                            <CardText>
-                                <Row>
-                                    <Col>
-                                        <p>Totale </p><h3><strong> {this.state.prix} € </strong></h3>
+                                    <Col md="1"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
+                                        height="15" width="10" /></Col>
+                                    <Col md="9">
+                                        <h7>{this.state.adressHotel}</h7>
                                     </Col>
                                 </Row>
-                            </CardText>
+                                <Row>
+                                    <Col md="3"><p>{this.state.nbrAdulte} adulte(s)</p></Col>
+                                    <Col md="3"><p>{this.state.nbrEnfant} enfant(s)</p></Col>
+                                    <Col md="3"><p>{this.state.nbrChambre} chambre(s)</p></Col>
+                                    <Col md={{ size: '2', offset: 1 }}>
+                                        <h3><Badge color="danger">
+                                            <strong>€ {this.props.prix}</strong>
+                                        </Badge>{' '}</h3>
+                                    </Col>
+                                </Row>
+                                <Row>
 
-                            <Button color="success"><strong>Réserver !</strong></Button>
-                            <img src="https://image.freepik.com/icones-gratuites/panier-2_318-11553.jpg"
-                                height="30" width="30" />
+                                    <Col md="6"></Col>
+                                    <Col md="6"><Button color="success"><strong>Réserver !</strong></Button></Col>
+
+                                </Row>
+                            </Alert>
                         </CardBlock>
                     </Card>
 

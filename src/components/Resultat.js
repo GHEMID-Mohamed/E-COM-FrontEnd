@@ -74,8 +74,8 @@ export default class Resultat extends Component {
                             >
                             </CardChambre>
                         </Col>
-                        <Col md="1"></Col>
-                        <Col md="3"><CardPanier
+                        
+                        <Col md="4"><CardPanier
                             prix={this.state.prix}
                             nomHotel={this.state.nomHotel}
                             adressHotel={this.state.adressHotel}

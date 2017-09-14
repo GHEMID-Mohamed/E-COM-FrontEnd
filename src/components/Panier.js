@@ -22,7 +22,9 @@ export default class Panier extends Component {
             nbrEnfant: this.props.nbrEnfant,
             nbrChambre: this.props.nbrChambre,
             nbrLit: this.props.nbrLit,
-            elements: []
+            elements: [],
+            indexElement: 0,
+            listElemnt: ''
         }
 
         this.goListenElement = this.goListenElement.bind(this)
@@ -37,15 +39,34 @@ export default class Panier extends Component {
     }
 
 
-    goListenElement() {
-        this.state.elements.pop();
+    goListenElement(element) {
+        this.setState(
+            { indexElement: this.state.indexElement - 1 }
+        )
+        var index = this.state.elements.indexOf(<PanierElement
+            key={element} ></PanierElement>)
+
+        const elemnts = this.state.elements
+
+        elemnts.slice(index,1)
+
+        this.setState({
+            elements: elemnts
+        })
+
+
     }
 
     componentWillReceiveProps(nextProps) {
 
         if (parseInt(this.state.prix) !== parseInt(nextProps.prix)) {
+
+            this.setState({ indexElement: this.state.indexElement + 1 })
+
             this.state.elements.push(
+
                 <PanierElement
+                    
                     listenElement={this.goListenElement}
                     prix={nextProps.prix}
                     nomHotel={nextProps.nomHotel}
@@ -55,7 +76,10 @@ export default class Panier extends Component {
                     nbrChambre={nextProps.nbrChambre}
                     nbrLit={nextProps.nbrLit}
                 ></PanierElement>
+
             );
+
+
 
             this.setState({
                 prix: nextProps.prix,

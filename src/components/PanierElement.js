@@ -15,7 +15,7 @@ export default class PanierElement extends Component {
         super(props)
 
         this.state = {
-            
+
             prix: this.props.prix,
             nomHotel: this.props.nomHotel,
             adressHotel: this.props.adressHotel,
@@ -31,8 +31,10 @@ export default class PanierElement extends Component {
 
     onDismiss() {
         this.setState({ visible: false });
-        this.props.listenElement()
+        this.props.listenElement(this.state.prix)
     }
+
+    
 
 
     render() {
@@ -41,32 +43,32 @@ export default class PanierElement extends Component {
         return (
 
             <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
-                            <Row>
-                                <Col><h6>{this.state.nomHotel}</h6></Col>
-                            </Row>
-                            <Row>
-                                <Col md="1"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
-                                    height="15" width="10" /></Col>
-                                <Col md="9">
-                                    <h7>{this.state.adressHotel}</h7>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md="3"><p>{this.state.nbrAdulte} adulte(s)</p></Col>
-                                <Col md="3"><p>{this.state.nbrEnfant} enfant(s)</p></Col>
-                                <Col md="3"><p>{this.state.nbrChambre} chambre(s)</p></Col>
-                                <Col md="3">
-                                    <h3><Badge color="danger">
-                                        <strong>€ {this.props.prix}</strong>
-                                    </Badge>{' '}</h3>
-                                </Col>
-                            </Row>
-                            <Row>
+                <Row>
+                    <Col><h6>{this.state.nomHotel}</h6></Col>
+                </Row>
+                <Row>
+                    <Col md="1"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
+                        height="15" width="10" /></Col>
+                    <Col md="9">
+                        <h7>{this.state.adressHotel}</h7>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md="3"><p>{this.state.nbrAdulte} adulte(s)</p></Col>
+                    <Col md="3"><p>{this.state.nbrEnfant} enfant(s)</p></Col>
+                    <Col md="3"><p>{this.state.nbrChambre} chambre(s)</p></Col>
+                    <Col md="3">
+                        <h3><Badge color="danger">
+                            <strong>€ {this.props.prix}</strong>
+                        </Badge>{' '}</h3>
+                    </Col>
+                </Row>
+                <Row>
 
-                                <Col md="7"></Col>
-                                <Col md="5"><Button color="success"><strong>Réserver !</strong></Button></Col>
+                    <Col md="7"></Col>
+                    <Col md="5"><Button color="success"><strong>Réserver !</strong></Button></Col>
 
-                            </Row>
+                </Row>
             </Alert>
 
         )

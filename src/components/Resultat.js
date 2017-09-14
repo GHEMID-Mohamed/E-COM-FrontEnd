@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import '../components/Resultat.css'
 import StepsBookingTabs from '../components/StepsBookingTabs'
 import CardChambre from '../components/CardChambre'
-import CardPanier from '../components/CardPanier'
+import Panier from '../components/Panier'
 
 export default class Resultat extends Component {
 
@@ -24,7 +24,7 @@ export default class Resultat extends Component {
     }
 
 
-    
+
     goListenButtonInChambre(event, prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
         this.setState({
             prix: Number(prix),
@@ -40,7 +40,7 @@ export default class Resultat extends Component {
 
     }
 
-    
+
 
     render() {
 
@@ -74,8 +74,8 @@ export default class Resultat extends Component {
                             >
                             </CardChambre>
                         </Col>
-                        
-                        <Col md="4"><CardPanier
+
+                        <Col md="4"><Panier
                             prix={this.state.prix}
                             nomHotel={this.state.nomHotel}
                             adressHotel={this.state.adressHotel}
@@ -83,10 +83,8 @@ export default class Resultat extends Component {
                             nbrEnfant={this.state.nbrEnfant}
                             nbrChambre={this.state.nbrChambre}
                             nbrLit={this.state.nbrLit}
-
-    
                         >
-                        </CardPanier></Col>
+                        </Panier></Col>
                     </Row>
                 </span >)
             }

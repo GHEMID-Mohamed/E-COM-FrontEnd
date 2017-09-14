@@ -105,7 +105,7 @@ export default class CardChambre extends Component {
                         <Button color="danger" onClick={this.handleClickAjouter}>
                             <img src="https://www.dmanetwork.com/share/dma/gfx/icon-add-grey.png"
                                 height="20" width="20" />
-                            Ajouter au panier
+                            Enregistrer
                             </Button>
                     </CardBlock>
                 </Card>

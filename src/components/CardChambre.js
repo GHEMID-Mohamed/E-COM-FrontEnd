@@ -11,7 +11,7 @@ export default class CardChambre extends Component {
         super(props)
 
         this.handleClickAjouter = this.handleClickAjouter.bind(this)
-        
+
     }
 
     handleClickAjouter(event) {
@@ -44,8 +44,8 @@ export default class CardChambre extends Component {
                             <br />
                             <Row>
                                 <Col>Adresse : </Col>
-                                <Col><p>{this.props.adresseHotel}</p></Col>
                             </Row>
+                            <Col><p>{this.props.adresseHotel}</p></Col>
                             <br />
                             <Row>
                                 <Col>
@@ -98,15 +98,23 @@ export default class CardChambre extends Component {
                                 </Col>
                             </Row>
 
-
-
-
                         </CardText>
                         <Button color="danger" onClick={this.handleClickAjouter}>
                             <img src="https://www.dmanetwork.com/share/dma/gfx/icon-add-grey.png"
                                 height="20" width="20" />
                             Enregistrer
                             </Button>
+                        <Button color="success">
+                            <Row>
+                                <Col md="1">
+                                    <img src="https://icon-icons.com/icons2/933/PNG/512/shopping-cart_icon-icons.com_72552.png"
+                                        height="20" width="20" />
+                                </Col>
+                                <Col>
+                                    Reserver
+                                </Col>
+                            </Row>
+                        </Button>
                     </CardBlock>
                 </Card>
             </div>

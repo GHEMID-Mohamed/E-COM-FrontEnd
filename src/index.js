@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import InscriptionPage from './pages/InscriptionPage'
 import PassOublierPage from './pages/PassOublierPage'
 import ResultatPage from './pages/ResultatPage'
+import ConnectedClient from './components/ConnectedClient'
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -15,7 +16,9 @@ ReactDOM.render(
             <Route exact path="/" component={App} />
             <Route path="/inscription" component={InscriptionPage} />
             <Route path="/passOublier" component={PassOublierPage} />
-            <Route path="/Resultat" component={ResultatPage} />
+            <Route path="/resultat" component={ResultatPage} />
+            <Route path="/connectedClient" component={ConnectedClient} />
+
         </div>
     </Router>,
     document.getElementById('root'));

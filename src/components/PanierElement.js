@@ -31,6 +31,7 @@ export default class PanierElement extends Component {
 
     onDismiss() {
         this.setState({ visible: false });
+        this.props.listenElement()
     }
 
 

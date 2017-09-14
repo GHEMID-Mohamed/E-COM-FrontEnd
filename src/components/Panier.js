@@ -25,35 +25,50 @@ export default class Panier extends Component {
             elements: []
         }
 
+        this.goListenElement = this.goListenElement.bind(this)
+    }
+
+    componentDidMount() {
+        this.elements = []
+    }
+
+    componentWillUnmount() {
+        this.elements = []
     }
 
 
+    goListenElement() {
+        this.state.elements.pop();
+    }
 
     componentWillReceiveProps(nextProps) {
 
-        this.state.elements.push(
-            <PanierElement
-                prix={nextProps.prix}
-                nomHotel={nextProps.nomHotel}
-                adressHotel={nextProps.adressHotel}
-                nbrAdulte={nextProps.nbrAdulte}
-                nbrEnfant={nextProps.nbrEnfant}
-                nbrChambre={nextProps.nbrChambre}
-                nbrLit={nextProps.nbrLit}
-            ></PanierElement>
-        );
+        if (parseInt(this.state.prix) !== parseInt(nextProps.prix)) {
+            this.state.elements.push(
+                <PanierElement
+                    listenElement={this.goListenElement}
+                    prix={nextProps.prix}
+                    nomHotel={nextProps.nomHotel}
+                    adressHotel={nextProps.adressHotel}
+                    nbrAdulte={nextProps.nbrAdulte}
+                    nbrEnfant={nextProps.nbrEnfant}
+                    nbrChambre={nextProps.nbrChambre}
+                    nbrLit={nextProps.nbrLit}
+                ></PanierElement>
+            );
 
-        this.setState({
-            prix: nextProps.prix,
-            nomHotel: nextProps.nomHotel,
-            adressHotel: nextProps.adressHotel,
-            nbrAdulte: nextProps.nbrAdulte,
-            nbrEnfant: nextProps.nbrEnfant,
-            nbrChambre: nextProps.nbrChambre,
-            nbrLit: nextProps.nbrLit,
-            elements: this.state.elements
-        })
+            this.setState({
+                prix: nextProps.prix,
+                nomHotel: nextProps.nomHotel,
+                adressHotel: nextProps.adressHotel,
+                nbrAdulte: nextProps.nbrAdulte,
+                nbrEnfant: nextProps.nbrEnfant,
+                nbrChambre: nextProps.nbrChambre,
+                nbrLit: nextProps.nbrLit,
+                elements: this.state.elements
+            })
 
+        }
     }
 
 

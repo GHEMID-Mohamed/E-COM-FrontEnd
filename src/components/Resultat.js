@@ -93,24 +93,24 @@ export default class Resultat extends Component {
 
                     <Row>
                         <Col md="4">
-                            <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+                            <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
                                 nombreDadultes="2"
                                 nombreEnfants="2"
                                 nombreChambres="3"
                                 nombreLits="2"
-                                prix="45"
+                                prix="85"
                                 nomHotel="Pyramide Millénuim"
                                 adresseHotel="01 Rue Jean Léoquet"
                             >
                             </CardChambre>
                         </Col>
                         <Col md="4">
-                            <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+                            <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
                                 nombreDadultes="2"
                                 nombreEnfants="2"
                                 nombreChambres="3"
                                 nombreLits="2"
-                                prix="45"
+                                prix="77"
                                 nomHotel="Pyramide Millénuim"
                                 adresseHotel="01 Rue Jean Léoquet"
                             >

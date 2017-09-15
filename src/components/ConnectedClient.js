@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
-export default class ButtonClient extends Component {
+export default class ConnectedClient extends Component {
 
     constructor(props) {
         super(props);
@@ -33,6 +34,7 @@ export default class ButtonClient extends Component {
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem header>Paramètres</DropdownItem>
+                                <DropdownItem><Link to="/mesReservations">Mes reservations</Link></DropdownItem>
                                 <DropdownItem>Déconnecter</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>

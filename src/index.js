@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import InscriptionPage from './pages/InscriptionPage'
 import PassOublierPage from './pages/PassOublierPage'
 import ResultatPage from './pages/ResultatPage'
-import ConnectedClient from './components/ConnectedClient'
+import AdministratorPage from './pages/AdministratorPage'
+import MesReservationsPage from './pages/MesReservationsPage'
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -17,8 +18,9 @@ ReactDOM.render(
             <Route path="/inscription" component={InscriptionPage} />
             <Route path="/passOublier" component={PassOublierPage} />
             <Route path="/resultat" component={ResultatPage} />
-            <Route path="/connectedClient" component={ConnectedClient} />
-
+            <Route path="/administrator" component={AdministratorPage} />
+            <Route path="/mesReservations" component={MesReservationsPage} />
+            
         </div>
     </Router>,
     document.getElementById('root'));

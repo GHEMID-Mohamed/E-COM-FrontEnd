@@ -11,8 +11,7 @@ export default class Header extends Component {
         return (
             <div>
                 <Row>
-                    <Col md="9"></Col>
-                    <Col md="3"><SignInWindow></SignInWindow></Col>
+                    <Col><SignInWindow></SignInWindow></Col>
                 </Row>
                 <Row>
                     <Col md="2">

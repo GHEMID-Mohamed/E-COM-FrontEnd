@@ -10,6 +10,7 @@ import ResultatPage from './pages/ResultatPage'
 import AdministratorPage from './pages/AdministratorPage'
 import MesReservationsPage from './pages/MesReservationsPage'
 import registerServiceWorker from './registerServiceWorker';
+import ContacterNousPage from './pages/ContacterNousPage'
 
 ReactDOM.render(
     <Router>
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Route path="/resultat" component={ResultatPage} />
             <Route path="/administrator" component={AdministratorPage} />
             <Route path="/mesReservations" component={MesReservationsPage} />
+            <Route path="/contacterNous" component={ContacterNousPage} />
             
         </div>
     </Router>,

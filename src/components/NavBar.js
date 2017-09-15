@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 export default class NavBar extends Component {
     render() {
@@ -16,8 +17,12 @@ export default class NavBar extends Component {
                         <NavLink href="#">Nos Hôtels</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Nous contacter</NavLink>
+                        <Link to="/contacterNous">
+                        Nous contacter
+                            {/*<NavLink href="#">Nous contacter</NavLink> */}
+                        </Link>
                     </NavItem>
+
                 </Nav>
             </div>
         );

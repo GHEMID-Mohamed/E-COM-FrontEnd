@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
     Card, CardImg, CardText, CardBlock,
-    CardTitle, CardSubtitle, Button, Input, Row, Col, Alert, Badge
+    CardTitle, CardSubtitle, Button, Input, Row, Col, Alert, Badge,
+    Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
 import '../components/CardChambre.css'
 
@@ -10,9 +11,23 @@ export default class CardChambre extends Component {
     constructor(props) {
         super(props)
 
-        this.handleClickAjouter = this.handleClickAjouter.bind(this)
+        this.state = {
+            modal: false
+        };
 
+
+
+        this.handleClickAjouter = this.handleClickAjouter.bind(this)
+        this.toggle = this.toggle.bind(this);
     }
+
+    toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+
+
 
     handleClickAjouter(event) {
         //console.log(event)
@@ -24,7 +39,16 @@ export default class CardChambre extends Component {
         return (
             <div>
                 <Card>
-                    <CardImg top width="100%" src={this.props.src} alt="Chambre" />
+                    <div class="container">
+                        <div className="imgChambre">
+                            <CardImg onClick={this.toggle}
+                                top width="100%" src={this.props.src} alt="Chambre"
+                            />
+                        </div>
+                        <div className="overlay">
+                            <div className="text">Cliquez pour zoomer</div>
+                        </div>
+                    </div>
                     <CardBlock>
                         <CardTitle>
                             <Row>
@@ -105,11 +129,22 @@ export default class CardChambre extends Component {
                                     <img src="https://www.dmanetwork.com/share/dma/gfx/icon-add-grey.png"
                                         height="20" width="20" />
                                     Ajouter à ma liste pour la <strong>réserver</strong>
-                            </Button>
+                                </Button>
                             </Col>
                         </Row>
                     </CardBlock>
                 </Card>
+
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                    <ModalBody>
+
+                    </ModalBody>
+                    <ModalFooter>
+                        <img src={this.props.src} height="300" width="380" />
+                        <Button color="secondary" onClick={this.toggle}>Quitter</Button>
+                    </ModalFooter>
+                </Modal>
             </div>
         )
     }

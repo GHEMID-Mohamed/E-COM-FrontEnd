@@ -36,7 +36,7 @@ export default class PanierElement extends Component {
     }
 
     handleClick() {
-     this.props.ListenButtonReserver()   
+     this.props.ListenButtonReserver(this.props.prix, this.props.nomHotel, this.props.adressHotel, this.props.nbrAdulte, this.props.nbrEnfant, this.props.nbrChambre, this.props.nbrLit)   
     }
 
 

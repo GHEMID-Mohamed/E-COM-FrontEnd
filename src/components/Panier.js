@@ -97,10 +97,13 @@ export default class Panier extends Component {
     }
 
 
-    ListenButtonReserver () {
+    ListenButtonReserver (prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
         console.log('button was clicked from pannier')
-        this.props.listenReserverButton2()
+        console.log(prix)
+        this.props.listenReserverButton2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit)
     }
+
+
 
 
     render() {

@@ -25,18 +25,18 @@ export default class Resultat extends Component {
 
     }
 
-    listenReserverButton () {
+    listenReserverButton (prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
 
         console.log('button was clicked from resultats')
 
         this.props.activeOnglet(
-            this.state.prix,
-            this.state.nomHotel,
-            this.state.adressHotel,
-            this.state.nbrAdulte,
-            this.state.nbrEnfant,
-            this.state.nbrChambre,
-            this.state.nbrLit
+            prix,
+            nomHotel,
+            adressHotel,
+            nbrAdulte,
+            nbrEnfant,
+            nbrChambre,
+            nbrLit
         )
         
 

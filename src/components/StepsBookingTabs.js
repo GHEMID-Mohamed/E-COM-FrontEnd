@@ -14,6 +14,8 @@ export default class StepsBookingTabs extends Component {
         this.state = {
             activeTab: '1'
         };
+
+        this.activeOnlget2 = this.activeOnlget2.bind(this)
     }
 
     toggle(tab) {
@@ -23,6 +25,13 @@ export default class StepsBookingTabs extends Component {
             });
         }
     }
+
+    activeOnlget2() {
+        this.setState({
+            activeTab: '2'
+        });
+    }
+
     render() {
         return (
             <div>
@@ -65,7 +74,7 @@ export default class StepsBookingTabs extends Component {
                     <TabPane tabId="1">
                         <Row>
                             <Col sm="12">
-                                <Resultat></Resultat>
+                                <Resultat activeOnglet={this.activeOnlget2}></Resultat>
                             </Col>
                             <Col>
 

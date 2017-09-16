@@ -28,6 +28,7 @@ export default class Panier extends Component {
         }
 
         this.goListenElement = this.goListenElement.bind(this)
+        this.ListenButtonReserver = this.ListenButtonReserver.bind(this)
     }
 
     componentDidMount() {
@@ -65,7 +66,7 @@ export default class Panier extends Component {
 
             this.state.elements.push(
 
-                <PanierElement
+                <PanierElement ListenButtonReserver={this.ListenButtonReserver}
                     
                     listenElement={this.goListenElement}
                     prix={nextProps.prix}
@@ -93,6 +94,12 @@ export default class Panier extends Component {
             })
 
         }
+    }
+
+
+    ListenButtonReserver () {
+        console.log('button was clicked from pannier')
+        this.props.listenReserverButton2()
     }
 
 

@@ -21,6 +21,18 @@ export default class Resultat extends Component {
         }
 
         this.goListenButtonInChambre = this.goListenButtonInChambre.bind(this)
+        this.listenReserverButton = this.listenReserverButton.bind(this)
+
+    }
+
+    listenReserverButton () {
+
+        console.log('button was clicked from resultats')
+
+        this.props.activeOnglet()
+        
+
+
     }
 
 
@@ -76,6 +88,7 @@ export default class Resultat extends Component {
                         </Col>
 
                         <Col md="4"><Panier
+                            listenReserverButton2 = {this.listenReserverButton}
                             prix={this.state.prix}
                             nomHotel={this.state.nomHotel}
                             adressHotel={this.state.adressHotel}

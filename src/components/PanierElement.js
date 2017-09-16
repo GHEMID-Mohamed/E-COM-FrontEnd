@@ -26,7 +26,8 @@ export default class PanierElement extends Component {
             visible: true
         }
 
-        this.onDismiss = this.onDismiss.bind(this);
+        this.onDismiss = this.onDismiss.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     onDismiss() {
@@ -34,7 +35,11 @@ export default class PanierElement extends Component {
         this.props.listenElement(this.state.prix)
     }
 
-    
+    handleClick() {
+     this.props.ListenButtonReserver()   
+    }
+
+
 
 
     render() {
@@ -66,7 +71,10 @@ export default class PanierElement extends Component {
                 <Row>
 
                     <Col md="7"></Col>
-                    <Col md="5"><Button color="success"><strong>Réserver !</strong></Button></Col>
+                    <Col md="5">
+                    <Button color="success" onClick={this.handleClick}>
+                        <strong>Réserver !</strong>
+                    </Button></Col>
 
                 </Row>
             </Alert>

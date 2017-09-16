@@ -29,7 +29,15 @@ export default class Resultat extends Component {
 
         console.log('button was clicked from resultats')
 
-        this.props.activeOnglet()
+        this.props.activeOnglet(
+            this.state.prix,
+            this.state.nomHotel,
+            this.state.adressHotel,
+            this.state.nbrAdulte,
+            this.state.nbrEnfant,
+            this.state.nbrChambre,
+            this.state.nbrLit
+        )
         
 
 

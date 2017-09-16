@@ -7,6 +7,39 @@ import {
 
 
 export default class PayementForm extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            prix: 0,
+            nomHotel: '',
+            adressHotel: '',
+            nbrAdulte: 0,
+            nbrEnfant: 0,
+            nbrChambre: 0,
+            nbrLit: 0
+        }
+
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        this.setState({
+            prix: nextProps.prix,
+            nomHotel: nextProps.nomHotel,
+            adressHotel: nextProps.adressHotel,
+            nbrAdulte: nextProps.nbrAdulte,
+            nbrEnfant: nextProps.nbrEnfant,
+            nbrChambre: nextProps.nbrChambre,
+            nbrLit: nextProps.nbrLit,
+        })
+
+    }
+
+
+
+
     render() {
         return (
             <div>

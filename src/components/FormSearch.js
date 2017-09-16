@@ -13,101 +13,104 @@ export default class FormSearch extends Component {
         super(props)
 
         this.state = {
-            dateArrive : '',
-            dateDepart : '',
+            dateArrive: '',
+            dateDepart: '',
         }
     }
 
     getDateArrive(date) {
-        this.setState({dateArrive : date})
+        this.setState({ dateArrive: date })
     }
 
     getDateDepart(date) {
-        this.setState({dateDepart : date})
+        this.setState({ dateDepart: date })
     }
 
     render() {
         return (
             <div>
 
-                <Form>
+                <Form inline>
                     <Row>
-                        <Col md="1">
-                            <img src="https://st2.depositphotos.com/6323354/11163/v/950/depositphotos_111633542-stock-illustration-map-pointer-icon-gps-location.jpg"
-                                height="50" width="50" />
-                        </Col>
-                        <Col md="5">
-                            <FormGroup>
-                                <InputDestination></InputDestination>
-                            </FormGroup>
-                            {' '}
-                        </Col>
-                        <Col md="3">
-                            <FormGroup>
+                        <Col md={{size: 12, offset: 2}}>
+                            <Row>
+                                <Col md="4">
+                                    <FormGroup>
+                                        <Row>
+                                            <Col>
+                                                <InputDestination></InputDestination>
+                                            </Col>
+                                        </Row>
+                                    </FormGroup>
+                                    {' '}
+                                </Col>
+                                <Col md={{ size: 4, offset: 0 }}>
+                                    <FormGroup>
 
-                                <DatePickerArrive goGetDateArrive={this.getDateArrive} ></DatePickerArrive>
+                                        <DatePickerArrive goGetDateArrive={this.getDateArrive} ></DatePickerArrive>
 
-                            </FormGroup>
-                            {' '}
-                        </Col>
-                        <Col md="3">
-                            <FormGroup>
+                                    </FormGroup>
+                                    {' '}
+                                </Col>
+                                <Col md={{ size: 4, offset: 0 }}>
+                                    <FormGroup>
 
-                                <DatePickerDepart goGetDateDepart={this.getDateDepart} ></DatePickerDepart>
+                                        <DatePickerDepart goGetDateDepart={this.getDateDepart} ></DatePickerDepart>
 
-                            </FormGroup>
-                            {' '}
+                                    </FormGroup>
+                                    {' '}
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md="1"></Col>
+                                <Col md="3">
+                                    <FormGroup>
+                                        <Input type="select" name="NbrPersonne" id="NbrPersonne">
+                                            <option>0 adulte</option>
+                                            <option>1 adulte</option>
+                                            <option>2 adultes</option>
+                                            <option>3 adultes</option>
+                                            <option>4 adultes</option>
+                                            <option>5 adultes</option>
+                                        </Input>
+                                    </FormGroup> {' '}
+                                </Col>
+                                <Col md="3">
+                                    <FormGroup>
+                                        <Input type="select" name="NbrPersonne" id="NbrPersonne">
+                                            <option>0 enfant</option>
+                                            <option>1 enfant</option>
+                                            <option>2 enfants</option>
+                                            <option>3 enfants</option>
+                                            <option>4 enfants</option>
+                                            <option>5 enfants</option>
+                                        </Input>
+                                    </FormGroup>
+                                </Col>
+                                <Col md="3">
+                                    <FormGroup>
+                                        <Input type="select" name="NbrPersonne" id="NbrPersonne">
+                                            <option>1 chambre</option>
+                                            <option>2 chambres</option>
+                                            <option>3 chambres</option>
+                                            <option>4 chambres</option>
+                                            <option>5 chambres</option>
+                                        </Input>
+                                    </FormGroup>
+                                </Col>
+
+                                <Col md="2">
+                                    <Link to="/resultat">
+                                        <Button color="danger" size="md">
+
+                                            <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
+
+                                        </Button>{' '}
+                                    </Link>
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md="1"></Col>
-                        <Col md="3">
-                            <FormGroup>
-                                <Input type="select" name="NbrPersonne" id="NbrPersonne">
-                                    <option>0 adulte</option>
-                                    <option>1 adulte</option>
-                                    <option>2 adultes</option>
-                                    <option>3 adultes</option>
-                                    <option>4 adultes</option>
-                                    <option>5 adultes</option>
-                                </Input>
-                            </FormGroup> {' '}
-                        </Col>
-                        <Col md="3">
-                            <FormGroup>
-                                <Input type="select" name="NbrPersonne" id="NbrPersonne">
-                                    <option>0 enfant</option>
-                                    <option>1 enfant</option>
-                                    <option>2 enfants</option>
-                                    <option>3 enfants</option>
-                                    <option>4 enfants</option>
-                                    <option>5 enfants</option>
-                                </Input>
-                            </FormGroup>
-                        </Col>
-                        <Col md="3">
-                            <FormGroup>
-                                <Input type="select" name="NbrPersonne" id="NbrPersonne">
-                                    <option>1 chambre</option>
-                                    <option>2 chambres</option>
-                                    <option>3 chambres</option>
-                                    <option>4 chambres</option>
-                                    <option>5 chambres</option>
-                                </Input>
-                            </FormGroup>
-                        </Col>
-
-                        <Col md="2">
-                            <Link to="/resultat">
-                                <Button color="danger" size="md">
-
-                                    <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
-
-                                </Button>{' '}
-                            </Link>
-                        </Col>
-                    </Row>
-
                 </Form>
 
             </div>

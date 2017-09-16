@@ -48,7 +48,7 @@ export default class ContacterNousPage extends Component {
                                 <br />
                                 <FormGroup>
                                     <Label for="text">Message: </Label>
-                                    <Input type="textarea" name="text" id="text" />
+                                    <Input type="textarea" name="text" id="text"     />
                                 </FormGroup>
                                 <br />
                                 <Button color="primary">Envoyer</Button>

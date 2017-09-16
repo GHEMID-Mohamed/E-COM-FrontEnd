@@ -18,7 +18,7 @@ export default  class InputDestination extends Component {
     render() {
       return (
             <input type="text" value={this.state.value} onChange={this.handleChange}
-            placeholder="Entrez votre destination ! " className="InputDestination" />
+            placeholder="Destination ! " className="InputDestination" />
       );
     }
   }

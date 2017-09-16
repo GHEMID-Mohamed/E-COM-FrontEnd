@@ -12,10 +12,20 @@ export default class StepsBookingTabs extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            activeTab: '1'
+            activeTab: '1',
+            prix: 0,
+            nomHotel: '',
+            adressHotel: '',
+            nbrAdulte: 0,
+            nbrEnfant: 0,
+            nbrChambre: 0,
+            nbrLit: 0
+
         };
 
         this.activeOnlget2 = this.activeOnlget2.bind(this)
+        this.listenPayerButton = this.listenPayerButton.bind(this)
+        this.listenBackButton = this.listenBackButton.bind(this)
     }
 
     toggle(tab) {
@@ -26,10 +36,29 @@ export default class StepsBookingTabs extends Component {
         }
     }
 
-    activeOnlget2() {
+    activeOnlget2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
         this.setState({
-            activeTab: '2'
+            activeTab: '2',
+            prix: Number(prix),
+            nomHotel: nomHotel,
+            adressHotel: adressHotel,
+            nbrAdulte: Number(nbrAdulte),
+            nbrEnfant: Number(nbrEnfant),
+            nbrChambre: Number(nbrChambre),
+            nbrLit: Number(nbrLit)
         });
+    }
+
+    listenPayerButton() {
+        this.setState({
+            activeTab: '3'
+        })
+    }
+
+    listenBackButton() {
+        this.setState({
+            activeTab: '1'
+        })
     }
 
     render() {
@@ -85,21 +114,31 @@ export default class StepsBookingTabs extends Component {
                     {/*Récapitulatif*/}
                     <TabPane tabId="2">
 
-                    <Recapitulatif
+                        <Recapitulatif
                             src="http://img-ovh-cloud.zszywka.pl/0/0229/6107-elegancka-sypialnia.jpg"
-                            nombreDadultes="7"
-                            nombreEnfants="3"
-                            nombreChambres="1"
-                            nombreLits="1"
-                            prix="69"
-                            nomHotel="Pyramide Millénuim"
-                            adresseHotel="01 Rue Jean Léoquet"
+                            prix={this.state.prix}
+                            nomHotel={this.state.nomHotel}
+                            adressHotel={this.state.adressHotel}
+                            nbrAdulte={this.state.nbrAdulte}
+                            nbrEnfant={this.state.nbrEnfant}
+                            nbrChambre={this.state.nbrChambre}
+                            nbrLit={this.state.nbrLit}
+                            listenPayerButtonProp={this.listenPayerButton}
+                            listenBackButtonProp={this.listenBackButton}
                         ></Recapitulatif>
                     </TabPane>
 
                     {/*Payement*/}
                     <TabPane tabId="3">
-                        <PayementForm></PayementForm>
+                        <PayementForm
+                            prix={this.state.prix}
+                            nomHotel={this.state.nomHotel}
+                            adressHotel={this.state.adressHotel}
+                            nbrAdulte={this.state.nbrAdulte}
+                            nbrEnfant={this.state.nbrEnfant}
+                            nbrChambre={this.state.nbrChambre}
+                            nbrLit={this.state.nbrLit}
+                        ></PayementForm>
                     </TabPane>
 
                     {/*Confirmation*/}

@@ -24,8 +24,10 @@ export default class ModalExample extends Component {
     render() {
         return (
             <div>
+                {/*
+                 <Col md="4"><ConnectedClient></ConnectedClient></Col>*/}
                 <Row>
-               <Col md="6"></Col>
+                    <Col md="10"></Col>
                     <Col md="2">
                         <Button color="primary" onClick={this.toggle}>
                             {this.props.buttonLabel}
@@ -33,7 +35,7 @@ export default class ModalExample extends Component {
                             Mon compte
                         </Button>
                     </Col>
-                    <Col md="4"><ConnectedClient></ConnectedClient></Col>
+
                 </Row>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Connectez vous à votre compte</ModalHeader>

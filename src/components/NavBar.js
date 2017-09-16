@@ -6,22 +6,20 @@ export default class NavBar extends Component {
     render() {
         return (
             <div>
-                <Nav pills>
+                <Nav tabs={false} pills={true}>
                     <NavItem>
-                        <NavLink href="/" active>Accueil</NavLink>
+                        <NavLink href="/">Accueil</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Nos meilleures offres</NavLink>
+                        <NavLink href="/administrator">Nos meilleures offres</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="#">Nos Hôtels</NavLink>
                     </NavItem>
                     <NavItem>
-                        <Link to="/contacterNous">
-                        Nous contacter
-                            {/*<NavLink href="#">Nous contacter</NavLink> */}
-                        </Link>
+                        <NavLink href="/contacterNous">Contacter nous</NavLink>
                     </NavItem>
+                    
 
                 </Nav>
             </div>

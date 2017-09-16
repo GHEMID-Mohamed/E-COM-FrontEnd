@@ -38,7 +38,7 @@ export default class TabsAdministrator extends Component {
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '2' })}
                             onClick={() => { this.toggle('2'); }}
-                        >
+                        >   
                             Ajouter une Chambre
                         </NavLink>
                     </NavItem>

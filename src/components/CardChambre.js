@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 import '../components/CardChambre.css'
 
+
 export default class CardChambre extends Component {
 
     constructor(props) {
@@ -16,10 +17,10 @@ export default class CardChambre extends Component {
         };
 
 
-
         this.handleClickAjouter = this.handleClickAjouter.bind(this)
         this.toggle = this.toggle.bind(this);
     }
+
 
     toggle() {
         this.setState({
@@ -136,7 +137,7 @@ export default class CardChambre extends Component {
                 </Card>
 
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Photo Chambre</ModalHeader>
                     <ModalBody>
 
                     </ModalBody>

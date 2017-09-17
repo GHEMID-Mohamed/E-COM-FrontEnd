@@ -11,12 +11,18 @@ export default class ConnectedClient extends Component {
         this.state = {
             dropdownOpen: false
         };
+
+        this.handleClick = this.handleClick.bind(this)
     }
 
     toggle() {
         this.setState({
             dropdownOpen: !this.state.dropdownOpen
         });
+    }
+
+    handleClick() {
+        this.props.listenToLogOutProp()
     }
 
     render() {
@@ -34,8 +40,8 @@ export default class ConnectedClient extends Component {
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem header>Paramètres</DropdownItem>
-                                <DropdownItem><Link to="/mesReservations">Mes reservations</Link></DropdownItem>
-                                <DropdownItem>Déconnecter</DropdownItem>
+                                <Link to="/mesReservations">Mes reservations<DropdownItem></DropdownItem></Link>
+                                <DropdownItem onClick={this.handleClick}>Déconnecter</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                     </Col>

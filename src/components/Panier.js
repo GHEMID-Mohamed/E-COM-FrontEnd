@@ -23,7 +23,7 @@ export default class Panier extends Component {
             nbrChambre: this.props.nbrChambre,
             nbrLit: this.props.nbrLit,
             elements: [],
-            elementsIndexs : [],
+            elementsIndexs: [],
             indexElement: 0,
         }
 
@@ -31,7 +31,7 @@ export default class Panier extends Component {
         this.ListenButtonReserver = this.ListenButtonReserver.bind(this)
     }
 
-   
+
 
 
     goListenElement(element) {
@@ -59,43 +59,44 @@ export default class Panier extends Component {
 
             this.setState({ indexElement: this.state.indexElement + 1 })
 
-            this.state.elementsIndexs.push(this.state.indexElement)
-            this.setState({ elementsIndexs:  this.state.elementsIndexs})
-
-            if (!this.state.elementsIndexs.includes(
-                this.state.indexElement
+            if (!this.state.elements.includes(
+                nextProps.prix
             )) {
                 this.state.elements.push(
 
                     <PanierElement ListenButtonReserver={this.ListenButtonReserver}
-
                         listenElement={this.goListenElement}
                         prix={nextProps.prix}
                         nomHotel={nextProps.nomHotel}
-                        adressHotel={nextProps.adressHotel}
                         nbrAdulte={nextProps.nbrAdulte}
+                        adressHotel={nextProps.adressHotel}
                         nbrEnfant={nextProps.nbrEnfant}
                         nbrChambre={nextProps.nbrChambre}
                         nbrLit={nextProps.nbrLit}
                     ></PanierElement>
 
                 );
+
+                this.state.elements.push(
+                    parseInt(nextProps.prix)
+                )
             }
-
-
-            this.setState({
-                prix: nextProps.prix,
-                nomHotel: nextProps.nomHotel,
-                adressHotel: nextProps.adressHotel,
-                nbrAdulte: nextProps.nbrAdulte,
-                nbrEnfant: nextProps.nbrEnfant,
-                nbrChambre: nextProps.nbrChambre,
-                nbrLit: nextProps.nbrLit,
-                elements: this.state.elements
-            })
-
         }
+
+
+        this.setState({
+            prix: nextProps.prix,
+            nomHotel: nextProps.nomHotel,
+            adressHotel: nextProps.adressHotel,
+            nbrAdulte: nextProps.nbrAdulte,
+            nbrEnfant: nextProps.nbrEnfant,
+            nbrChambre: nextProps.nbrChambre,
+            nbrLit: nextProps.nbrLit,
+            elements: this.state.elements
+        })
+
     }
+
 
 
     ListenButtonReserver(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
@@ -116,7 +117,11 @@ export default class Panier extends Component {
                 <Card>
                     <CardBlock>
                         <CardTitle>Ma liste </CardTitle>
-                        {this.state.elements}
+                        {this.state.elements.map(function (listValue) {
+                            if(!Number.isInteger(listValue))
+                            return <div>{listValue}</div>
+                        })}
+                        {/*this.state.elements*/}
                     </CardBlock>
                 </Card>
             </Sticky>

@@ -1,3 +1,7 @@
+.search_auto_element {
+    height: 100%;
+}
+
 .search_auto_element:hover {
     background-color: #D6D6D6
   }

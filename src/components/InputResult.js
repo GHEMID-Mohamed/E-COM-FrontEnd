@@ -10,11 +10,11 @@ export default class InputSignUp extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             value: this.props.value
-         }
+        }
 
-         this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     handleClick() {
@@ -25,7 +25,9 @@ export default class InputSignUp extends React.Component {
     render() {
 
         return (
-            <p onClick={this.handleClick} className="search_auto_element">{this.props.value}</p>
+            <div onClick={this.handleClick} className="search_auto_element">
+                {this.props.value}
+            </div>
         );
     }
 }

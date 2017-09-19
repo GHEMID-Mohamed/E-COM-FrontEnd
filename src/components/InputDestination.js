@@ -22,12 +22,17 @@ export default class InputDestination extends Component {
 
     this.searchUpdated = this.searchUpdated.bind(this)
     this.resultHandleClick = this.resultHandleClick.bind(this)
+    this.reset = this.reset.bind(this)
+  }
+
+  reset() {
+    this.setState({
+      resultFound: true
+    })
   }
 
   resultHandleClick(value) {
-    console.log(value)
     const v = value
-    console.log(value)
     this.setState({
       searchTerm: v,
       resultFound: true,
@@ -36,9 +41,8 @@ export default class InputDestination extends Component {
 
   }
 
-
-
   searchUpdated(term) {
+    if(term.length<4) this.setState({ resultFound: false})
     this.setState({
       searchTerm: term,
       value: term
@@ -53,10 +57,12 @@ export default class InputDestination extends Component {
       <div>
         <SearchInput className="search-input" onChange={this.searchUpdated} ref="searchInput" value={this.state.value} />
         {filteredCountries.map(countrie => {
-          if (this.state.searchTerm.length > 2 && !this.state.resultFound)
+          if (this.state.searchTerm.length > 2 && !this.state.resultFound){
             return (
               <InputResult value={countrie.name} listenOnCLick={this.resultHandleClick}></InputResult>
             )
+          }
+
         })}
       </div>
     );

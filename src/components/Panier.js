@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import Sticky from 'react-sticky-el'
 import PanierElement from './PanierElement'
+import { Scrollbars } from 'react-custom-scrollbars';
 
 
 
@@ -29,9 +30,22 @@ export default class Panier extends Component {
 
         this.goListenElement = this.goListenElement.bind(this)
         this.ListenButtonReserver = this.ListenButtonReserver.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
+        this.handleScroll = this.handleScroll.bind(this)
+
     }
 
 
+
+
+
+    handleUpdate() {
+        this.refs.scrollbar.scrollToBottom()
+    }
+
+    handleScroll(e) {
+        this.refs.scrollbar.scrollToLeft()
+    }
 
 
     goListenElement(element) {
@@ -114,16 +128,25 @@ export default class Panier extends Component {
         return (
 
             <Sticky>
+
                 <Card>
                     <CardBlock>
                         <CardTitle>Ma liste </CardTitle>
-                        {this.state.elements.map(function (listValue) {
-                            if(!Number.isInteger(listValue))
-                            return <div>{listValue}</div>
-                        })}
-                        {/*this.state.elements*/}
+                        {/*onUpdate={this.handleUpdate}*/}
+                        <Scrollbars style={{ width: 310, height: 550 }}
+                             ref="scrollbar"
+                            onScroll={this.handleScroll}>
+
+                            {this.state.elements.map(function (listValue) {
+                                if (!Number.isInteger(listValue))
+                                    return <div>{listValue}</div>
+                            })}
+
+                        </Scrollbars>
+
                     </CardBlock>
                 </Card>
+
             </Sticky>
 
         )

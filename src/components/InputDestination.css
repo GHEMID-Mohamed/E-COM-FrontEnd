@@ -1,13 +1,46 @@
-.InputDestination {
+
+
+.search-input {
     width: 100%;
-    padding: 12px 20px;
-    border: 1px solid #353535;
+    padding: 5px 5px;
+    position: relative;
     border-radius:5px;
+    border: 1px solid gray;
+  }
+  
+  .search-input::before {
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAQJJREFUKBWVkr2uQUEUhf3ET6GRaC5aFRoJKrf1BKpb8SwqovYGXkCj00k0QnRKEYkILYobvpUYmeMMyVnJl7P3mjN7Zu9zwiGv2qRFyMMSRrAFp6JPN8XzBj+wgDkUYAg7WINTYdwpDECxrRLJHeq2accdkgm8bzTvNAg2EDOGeUYI1KNO1gkuzTA1g8T7ojbn4ONQWPuHPWgeHmnzCqoe15tkSNPgPEAn68oVcOmA2XMtGK9FoE/VhOTTVNExqLCGZnxCv2pYauEC6lF0oQxX6IOvb7yX9NPEQafan+aPXDdQC18LsO6Tip5BBY6gIQaSbnMCFRCBZRcIvFkbsvCr4AFGOCxQy+JdGQAAAABJRU5ErkJggg==');
+    display: block;
+    position: absolute;
+    width: 15px;
+    z-index: 3;
+    height: 15px;
+    font-size: 14px;
+    top: 11px;
+    left: 16px;
+    line-height: 32px;
+    opacity: 0.6;
+  }
+  
+  .search-input > input {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    line-height: 50px;
+    padding: 5px 20px 5px 30px;
+    height: 40px;
+    position: relative;
+  }
+  
+  .search-input > input:focus {
+    outline: none;
+  }
 
-    background-image: url("https://st2.depositphotos.com/6323354/11163/v/950/depositphotos_111633542-stock-illustration-map-pointer-icon-gps-location.jpg");
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-    background-position: right; 
+  .search_auto_element {
 
-    
-}
+  }
+
+
+  .search_auto_element:hover {
+    background-color: #D6D6D6
+  }

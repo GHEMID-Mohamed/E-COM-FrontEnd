@@ -36,7 +36,7 @@ export default class PanierElement extends Component {
     }
 
     handleClick() {
-     this.props.ListenButtonReserver(this.props.prix, this.props.nomHotel, this.props.adressHotel, this.props.nbrAdulte, this.props.nbrEnfant, this.props.nbrChambre, this.props.nbrLit)   
+        this.props.ListenButtonReserver(this.props.prix, this.props.nomHotel, this.props.adressHotel, this.props.nbrAdulte, this.props.nbrEnfant, this.props.nbrChambre, this.props.nbrLit)
     }
 
 
@@ -47,38 +47,38 @@ export default class PanierElement extends Component {
 
         return (
 
-            <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
-                <Row>
-                    <Col><h6>{this.state.nomHotel}</h6></Col>
-                </Row>
-                <Row>
-                    <Col md="1"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
-                        height="15" width="10" /></Col>
-                    <Col md="9">
-                        <h7>{this.state.adressHotel}</h7>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md="3"><p>{this.state.nbrAdulte} adulte(s)</p></Col>
-                    <Col md="3"><p>{this.state.nbrEnfant} enfant(s)</p></Col>
-                    <Col md="3"><p>{this.state.nbrChambre} chambre(s)</p></Col>
-                    <Col md="3">
-                        <h3><Badge color="danger">
-                            <strong>€ {this.props.prix}</strong>
-                        </Badge>{' '}</h3>
-                    </Col>
-                </Row>
-                <Row>
+                <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
+                    <Row>
+                        <Col><h6>{this.state.nomHotel}</h6></Col>
+                    </Row>
+                    <Row>
+                        <Col md="2"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
+                            height="15" width="10" />
+                        </Col>
+                        <Col md="10">
+                            <h7><p className="adresseHotel">{this.state.adressHotel}</p></h7>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md="3"><p>{this.state.nbrAdulte} adulte(s)</p></Col>
+                        <Col md="3"><p>{this.state.nbrEnfant} enfant(s)</p></Col>
+                        <Col md="3"><p>{this.state.nbrChambre} chambre(s)</p></Col>
+                        <Col md="3">
+                            <h3><Badge color="danger">
+                                <strong>€ {this.props.prix}</strong>
+                            </Badge>{' '}</h3>
+                        </Col>
+                    </Row>
+                    <Row>
 
-                    <Col md="7"></Col>
-                    <Col md="5">
-                    <Button color="success" onClick={this.handleClick}>
-                        <strong>Réserver !</strong>
-                    </Button></Col>
+                        <Col md="7"></Col>
+                        <Col md="5">
+                            <Button color="success" onClick={this.handleClick}>
+                                <strong>Réserver !</strong>
+                            </Button></Col>
 
-                </Row>
-            </Alert>
-
+                    </Row>
+                </Alert>
         )
     }
 

@@ -24,8 +24,9 @@ export default class ModalExample extends Component {
     render() {
         return (
             <div>
-                {/*
-                 <Col md="4"><ConnectedClient></ConnectedClient></Col>*/}
+                <Row>
+                 <Col md="4"><ConnectedClient></ConnectedClient></Col>
+                 </Row>
                 <Row>
                     <Col md="10"></Col>
                     <Col md="2">

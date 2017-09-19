@@ -9,44 +9,24 @@ export default class Body extends Component {
         return (
             <div className="Body">
                 <Row>
-                    <Col>
-                        <center>
-                            <p>
-                                <strong>Il y a toujours un hôtel Pyramide près de vous  !</strong>
-                            </p>
-                        </center>
-                    </Col>
-                    <hr className="my-2" />
-                </Row>
-                <Row>
-                    <Col md={{ size: 10, offset: 1 }}>
-                    <FormSearch></FormSearch>
-                     </Col>
-                </Row>
-                <Row><Col md="12"><hr /></Col></Row>
-                <Row>
-                    <Col md="4">
-                        <CardChambre
-                            src="http://hotel-diana-paris.com/wp-content/uploads/2013/10/chambre-double-hotel-diana7.jpg"
-                            nombreDeLit="1"
-                            nombreDePersonne="2"
-                        >
-                        </CardChambre>
-                    </Col>
-                    <Col md="4">
-                        <CardChambre src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                            nombreDeLit="2"
-                            nombreDePersonne="2"
-                        >
-                        </CardChambre>
-                    </Col>
-                    <Col md="4">
-                        <CardChambre src="https://media-cdn.tripadvisor.com/media/photo-s/02/8a/15/29/chambre-triple.jpg"
-                            nombreDeLit="3"
-                            nombreDePersonne="3"
-                        ></CardChambre>
+                    <Col md={{size: 12, offset: 3}}>
+                        <Row>
+                            <Col>
+                                <p>
+                                    <strong>Il y a toujours un hôtel Pyramide près de vous  !</strong>
+                                </p>
+
+                            </Col>
+                            <hr className="my-2" />
+                        </Row>
+                        <Row>
+                            <Col>
+                                <FormSearch></FormSearch>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
+
             </div>
         );
     }

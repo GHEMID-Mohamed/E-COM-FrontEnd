@@ -16,6 +16,9 @@ export default class FormSearch extends Component {
             dateArrive: '',
             dateDepart: '',
         }
+
+        this.getDateArrive = this.getDateArrive.bind(this)
+        this.getDateDepart = this.getDateDepart.bind(this)
     }
 
     getDateArrive(date) {
@@ -33,7 +36,7 @@ export default class FormSearch extends Component {
               
                     <Form>
                         <Row>
-                            <Col md="7">
+                            <Col md="11">
                                 <FormGroup>
                                     <InputDestination></InputDestination>
                                 </FormGroup>
@@ -86,7 +89,7 @@ export default class FormSearch extends Component {
                                     </Input>
                                 </FormGroup>
                             </Col>
-
+                            {/*
                             <Col md="auto">
                                 <FormGroup>
                                     <Input type="select" name="NbrPersonne" id="NbrPersonne">
@@ -98,6 +101,7 @@ export default class FormSearch extends Component {
                                     </Input>
                                 </FormGroup>
                             </Col>
+                            */}
 
                             <Col md="auto">
                                 <Link to="/resultat">

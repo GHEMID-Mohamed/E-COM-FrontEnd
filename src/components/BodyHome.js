@@ -3,13 +3,15 @@ import { Jumbotron, Row, Col } from 'reactstrap';
 import FormSearch from '../components/FormSearch'
 import CardChambre from '../components/CardChambre'
 import '../components/BodyHome.css'
+import bodyImg from '../Images/mapFR.png'
+
 
 export default class Body extends Component {
     render() {
         return (
             <div className="Body">
                 <Row>
-                    <Col md={{size: 12, offset: 3}}>
+                    <Col md={{ size: 12, offset: 3 }}>
                         <Row>
                             <Col>
                                 <p>
@@ -23,7 +25,11 @@ export default class Body extends Component {
                             <Col>
                                 <FormSearch></FormSearch>
                             </Col>
+                            <Col>
+                                <img src={bodyImg} alt="Map" height="300" width="280" />
+                            </Col>
                         </Row>
+                        <hr />
                     </Col>
                 </Row>
 

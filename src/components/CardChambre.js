@@ -72,7 +72,8 @@ export default class CardChambre extends Component {
                             </Row>
                             <Col><p>{this.props.adresseHotel}</p></Col>
                             <br />
-                            <Row>
+
+                            {/*<Row>
                                 <Col>
                                     Nombre de chambres
                                 </Col>
@@ -80,36 +81,28 @@ export default class CardChambre extends Component {
                                     <p>{this.props.nombreChambres}</p>
                                 </Col>
                             </Row>
-                            <br />
-                            <Row>
-                                <Col>Nombre de lits : </Col>
-                                <Col><p>{this.props.nombreLits}</p></Col>
-                            </Row>
-                            <br />
-                        </CardSubtitle>
+                            <br />*/}
 
-                        <CardSubtitle>
                             <Row>
+                                <Col><p>Type lit : </p></Col>
+                                <Col><p>{this.props.typeLit}</p></Col>
                                 <Col>
-                                    Nombre d'adultes
+                                    <p>Nombre d'adultes</p>
                                 </Col>
                                 <Col>
                                     <p>{this.props.nombreDadultes}</p>
                                 </Col>
-                            </Row>
-                        </CardSubtitle>
-                        <br />
-
-                        <CardSubtitle>
-                            <Row>
                                 <Col>
-                                    Nombre d'enfants
+                                    <p>Nombre d'enfants</p>
                                 </Col>
                                 <Col>
                                     <p>{this.props.nombreEnfants}</p>
                                 </Col>
                             </Row>
+                            <br />
                         </CardSubtitle>
+
+                    
 
 
                         <CardText>
@@ -146,7 +139,7 @@ export default class CardChambre extends Component {
                         <Button color="secondary" onClick={this.toggle}>Quitter</Button>
                     </ModalFooter>
                 </Modal>
-            </div>
+            </div >
         )
     }
 

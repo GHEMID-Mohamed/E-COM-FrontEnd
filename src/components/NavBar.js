@@ -14,7 +14,7 @@ export default class NavBar extends Component {
                         <NavLink href="/administrator">Nos meilleures offres</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#">Nos Hôtels</NavLink>
+                        <NavLink href="/hotels">Nos Hôtels</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="/contacterNous">Contacter nous</NavLink>

@@ -9,7 +9,7 @@ export default class ChambreDispo extends Component {
         super(props)
 
         this.state = {
-            listChambre : ''
+            listChambre: []
         }
     }
 
@@ -21,19 +21,41 @@ export default class ChambreDispo extends Component {
                 this.setState({
                     listChambre: data
                 })
-            })
+                console.log(data)
+            }).catch((error) => {
+                console.error(error);
+            });
 
-            console.log(this.state.listChambre)
+
     }
 
     render() {
         return (
             <div>
                 
+                {/*listItems = this.state.listChambre.map((object) =>
+                
+                )
+                */
+                }
             </div>
         )
     }
 }
 
 
+/*
+REQUEST
+fetch('https://mywebsite.com/endpoint/', {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    firstParam: 'yourValue',
+    secondParam: 'yourOtherValue',
+  })
+})
+*/
 

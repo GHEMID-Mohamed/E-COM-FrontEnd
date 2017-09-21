@@ -4,6 +4,7 @@ import FormSearch from '../components/FormSearch'
 import CardChambre from '../components/CardChambre'
 import '../components/BodyHome.css'
 import bodyImg from '../Images/mapFR.png'
+import ChambreDispo from '../components/ChambreDispo'
 
 
 export default class Body extends Component {
@@ -31,6 +32,9 @@ export default class Body extends Component {
                         </Row>
                         <hr />
                     </Col>
+                </Row>
+                <Row>
+                    <ChambreDispo></ChambreDispo>
                 </Row>
 
             </div>

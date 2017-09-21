@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap'
+import { Button, Row, Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import ConnectedClient from '../components/ConnectedClient'
+import CardHotel from '../components/CardHotel'
+import  LoadingIndicator  from 'react-loading-indicator'
 
 export default class ChambreDispo extends Component {
 
@@ -9,7 +11,7 @@ export default class ChambreDispo extends Component {
         super(props)
 
         this.state = {
-            listChambre: []
+            listChambre: ''
         }
     }
 
@@ -30,14 +32,31 @@ export default class ChambreDispo extends Component {
     }
 
     render() {
+
+        if (this.state.listChambre === '') return (
+            <center><LoadingIndicator
+                        segmentWidth="50"
+                     /></center>
+        )
+
+        const listItems = this.state.listChambre.map((object) =>
+            <Col>
+                <CardHotel
+                    nomHotel={object.hotel.nom}
+                    nbrEtoileHotel={object.hotel.nbEtoile}
+                    adresseHotel={object.hotel.adresse}
+                    VilleHotel={object.hotel.ville}
+                    regionHotel={object.hotel.region}
+                    codePostalHotel={object.hotel.codePostal}
+                ></CardHotel>
+            </Col>
+        )
+
         return (
             <div>
-                
-                {/*listItems = this.state.listChambre.map((object) =>
-                
-                )
-                */
-                }
+                <Row>
+                    {listItems}
+                </Row>
             </div>
         )
     }

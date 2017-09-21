@@ -14,7 +14,7 @@ export default class CardHotel extends Component {
         return (
             <div>
                 <Card>
-                    <div class="container">
+                    <div class="containerHotel">
                         <div className="imgChambre">
                             <CardImg onClick={this.toggle}
                                 top width="100" height="100"

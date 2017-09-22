@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap'
 import '../components/InputDestination.css'
 import SearchInput, { createFilter } from 'react-search-input'
-import countries from 'cities.json'
+import countries from '../extern_module/cities.json'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import DropdownAutoSearch from '../components/DropdownAutoSearch'
 import InputResult from '../components/InputResult'
@@ -47,7 +47,8 @@ export default class InputDestination extends Component {
       searchTerm: term,
       value: term
     })
-
+    console.log(term)
+    this.props.getInputValueProp(term)
   }
 
   render() {
@@ -55,7 +56,7 @@ export default class InputDestination extends Component {
     return (
 
       <div>
-        <SearchInput className="search-input" onChange={this.searchUpdated} ref="searchInput" value={this.state.value} />
+        <SearchInput className="search-input" onChange={this.searchUpdated} ref="searchInput" value={this.state.value}/>
         {filteredCountries.map(countrie => {
           if (this.state.searchTerm.length > 2 && !this.state.resultFound){
             return (

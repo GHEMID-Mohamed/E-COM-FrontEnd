@@ -1,0 +1,265 @@
+[
+  {
+    "country": "AD",
+    "name": "Paris",
+    "lat": "42.46372",
+    "lng": "1.49129"
+  },
+  {
+    "country": "AD",
+    "name": "Marseille",
+    "lat": "42.54277",
+    "lng": "1.73361"
+  },
+  {
+    "country": "Lyon",
+    "name": "Lyon",
+    "lat": "42.55623",
+    "lng": "1.53319"
+  },
+  {
+    "country": "Toulouse",
+    "name": "Toulouse",
+    "lat": "42.50729",
+    "lng": "1.53414"
+  },
+  {
+    "country": "Nice",
+    "name": "Nice",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  }
+  ,
+  {
+    "country": "Nantes",
+    "name": "Nantes",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  }
+  ,
+  {
+    "country": "Nantes",
+    "name": "Strasbourg",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "Nantes",
+    "name": "Montpellier",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "Bordeaux",
+    "name": "Bordeaux",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Lille",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  }
+  ,
+  {
+    "country": "",
+    "name": "Rennes",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Reims",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  }
+  ,
+  {
+    "country": "",
+    "name": "Le havre",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Saint-étienne",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Toulon",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Grenoble",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Dijon",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Nimes",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Angers",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Villeurbanne",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Saint-Denis",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Le Mans",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Aix-enProvence",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Clermont-Ferand",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Brest",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Tours",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Limoges",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Amiens",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Annecy",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Perpignan",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Metz",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Boulogne-Billancourt",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Besançon",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Orléans",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Mulhouse",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Saint-Denis",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Rouen",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Argenteuil",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Caen",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Montreuil",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Saint-Paul",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Nancy",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  },
+  {
+    "country": "",
+    "name": "Lille",
+    "lat": "42.54499",
+    "lng": "1.51483"
+  }
+
+]

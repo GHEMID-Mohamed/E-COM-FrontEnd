@@ -29,9 +29,10 @@
 
   }
 
+  /*
   .container:hover .overlay {
     opacity: 1;
-  }
+  }*/
 
   .container {
     position: relative;

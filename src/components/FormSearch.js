@@ -15,10 +15,37 @@ export default class FormSearch extends Component {
         this.state = {
             dateArrive: '',
             dateDepart: '',
+            InputValue: '',
+            valueAdulte: '',
+            valueEnfant: ''
         }
 
         this.getDateArrive = this.getDateArrive.bind(this)
         this.getDateDepart = this.getDateDepart.bind(this)
+        this.getInputValue = this.getInputValue.bind(this)
+        this.handleChangeEnfant = this.handleChangeEnfant.bind(this)
+        this.handleChangeAdulte = this.handleChangeAdulte.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    handleChangeAdulte(e) {
+        this.setState({
+            valueAdulte: e.target.value
+        })
+    }
+
+    handleChangeEnfant(e2) {
+        this.setState({
+            valueEnfant: e2.target.value
+        })
+    }
+
+    getInputValue(value) {
+        const v = value;
+        this.setState({
+            InputValue: v
+        })
+      
     }
 
     getDateArrive(date) {
@@ -29,67 +56,96 @@ export default class FormSearch extends Component {
         this.setState({ dateDepart: date })
     }
 
+    handleSubmit(e) {
+        if (this.state.dateArrive=="" || this.state.dateDepart=="" || this.state.InputValue=="") {
+            console.log('i stop submit')
+            e.preventDefault()
+
+        }
+        else {
+            if(this.state.valueAdulte=="" && this.state.valueEnfant=="") {
+                e.preventDefault()
+            } else {
+                // DO THE POST
+                console.log('Im ready')
+            }
+        }
+
+    }
+
     render() {
         return (
 
-      
-              
-                    <Form>
-                        <Row>
-                            <Col md="11">
-                                <FormGroup>
-                                    <InputDestination></InputDestination>
-                                </FormGroup>
-                                {' '}
-                            </Col>
-                        </Row>
 
-                        <Row>
-                            <Col md="auto">
-                                <FormGroup>
 
-                                    <DatePickerArrive goGetDateArrive={this.getDateArrive} ></DatePickerArrive>
+            <Form>
+                <Row>
+                    <Col md="11">
+                        <FormGroup>
+                            <InputDestination
+                                getInputValueProp={this.getInputValue}
+                            ></InputDestination>
+                        </FormGroup>
+                        {' '}
+                    </Col>
+                </Row>
 
-                                </FormGroup>
-                                {' '}
-                            </Col>
-                            <Col md="auto">
-                                <FormGroup>
+                <Row>
+                    <Col md="auto">
+                        <FormGroup>
 
-                                    <DatePickerDepart goGetDateDepart={this.getDateDepart} ></DatePickerDepart>
+                            <DatePickerArrive goGetDateArrive={this.getDateArrive} ></DatePickerArrive>
 
-                                </FormGroup>
-                                {' '}
-                            </Col>
+                        </FormGroup>
+                        {' '}
+                    </Col>
+                    <Col md="auto">
+                        <FormGroup>
 
-                        </Row>
+                            <DatePickerDepart goGetDateDepart={this.getDateDepart} ></DatePickerDepart>
 
-                        <Row>
-                            <Col md="auto">
-                                <FormGroup>
-                                    <Input type="select" name="NbrPersonne" id="NbrPersonne">
-                                        <option>0 adulte</option>
-                                        <option>1 adulte</option>
-                                        <option>2 adultes</option>
-                                        <option>3 adultes</option>
-                                        <option>4 adultes</option>
-                                        <option>5 adultes</option>
-                                    </Input>
-                                </FormGroup> {' '}
-                            </Col>
-                            <Col md="auto">
-                                <FormGroup>
-                                    <Input type="select" name="NbrPersonne" id="NbrPersonne">
-                                        <option>0 enfant</option>
-                                        <option>1 enfant</option>
-                                        <option>2 enfants</option>
-                                        <option>3 enfants</option>
-                                        <option>4 enfants</option>
-                                        <option>5 enfants</option>
-                                    </Input>
-                                </FormGroup>
-                            </Col>
-                            {/*
+                        </FormGroup>
+                        {' '}
+                    </Col>
+
+                </Row>
+
+                <Row>
+                    <Col md="auto">
+                        <FormGroup>
+                            <label for="NbrAdulte">Nombre adulte(s)</label>
+                            <Input type="select" name="NbrAdulte" id="NbrAdulte"
+                                value={this.state.valueAdulte}
+                                onChange={this.handleChangeAdulte}
+                                required
+                            >
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </Input>
+                        </FormGroup> {' '}
+                    </Col>
+                    <Col md="auto">
+                        <FormGroup>
+                            <label for="NbrEnfant">Nombre enfant(s)</label>
+                            <Input type="select" name="NbrEnfant" id="NbrEnfant"
+                                value={this.state.valueEnfant}
+                                onChange={this.handleChangeEnfant}
+                                placeholder="nbr enfant" required
+                            >
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </Input>
+                        </FormGroup>
+                    </Col>
+                    {/*
                             <Col md="auto">
                                 <FormGroup>
                                     <Input type="select" name="NbrPersonne" id="NbrPersonne">
@@ -102,23 +158,25 @@ export default class FormSearch extends Component {
                                 </FormGroup>
                             </Col>
                             */}
+                </Row>
 
-                            <Col md="auto">
-                                <Link to="/resultat">
-                                    <Button color="danger" size="md">
+                <Row>
+                    <Col md={{ size: 5, push: 7 }}>
+                        <Link to="/resultat">
+                            <Button color="danger" size="md" onClick={this.handleSubmit}>
+                                <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
+                                &nbsp;
+                                Rechercher
+                            </Button>{' '}
+                        </Link>
+                    </Col>
+                </Row>
 
-                                        <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
-
-                                    </Button>{' '}
-                                </Link>
-                            </Col>
-                        </Row>
 
 
 
+            </Form>
 
-                    </Form>
-            
 
 
         );

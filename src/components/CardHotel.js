@@ -4,7 +4,7 @@ import {
     CardTitle, CardSubtitle, Button, Input, Row, Col, Alert, Badge,
     Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
-import '../components/CardChambre.css'
+/*import '../components/CardChambre.css'*/
 import hotelImg from '../Images/hotel.png'
 
 export default class CardHotel extends Component {

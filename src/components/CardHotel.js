@@ -5,7 +5,7 @@ import {
     Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
 import '../components/CardChambre.css'
-
+import hotelImg from '../Images/hotel.png'
 
 export default class CardHotel extends Component {
 
@@ -17,8 +17,8 @@ export default class CardHotel extends Component {
                     <div class="containerHotel">
                         <div className="imgChambre">
                             <CardImg onClick={this.toggle}
-                                top width="100" height="100"
-                                src="https://www.myrtlebeachspeedway.com/wp-content/uploads/2015/09/hotel-icon.png" alt="Chambre"
+                                top width="200" height="100"
+                                src={hotelImg} alt="Chambre"
                             />
                         </div>
                         <div className="overlay">

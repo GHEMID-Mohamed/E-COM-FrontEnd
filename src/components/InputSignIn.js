@@ -12,12 +12,12 @@ export default class InputSignIn extends React.Component {
                     <Col>
                         <FormGroup>
                             <Label for="exampleEmail" hidden>Email</Label>
-                            <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
+                            <Input type="email" name="email" id="exampleEmail" placeholder="Email" required/>
                         </FormGroup>
                         {' '}
                         <FormGroup>
                             <Label for="examplePassword" hidden>Password</Label>
-                            <Input type="password" name="password" id="examplePassword" placeholder="Password" />
+                            <Input type="password" name="password" id="examplePassword" placeholder="Password" required/>
                         </FormGroup>
                         {' '}
                     </Col>

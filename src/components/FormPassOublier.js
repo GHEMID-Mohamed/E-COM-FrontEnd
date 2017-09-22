@@ -22,7 +22,7 @@ export default class FormPassOublier extends React.Component {
                                     <Col>
                                         <FormGroup>
                                             <Label for="exampleEmail" hidden>Email</Label>
-                                            <Input type="email" name="email" id="exampleEmail" placeholder="Entrez votre adresse email" />
+                                            <Input type="email" name="email" id="exampleEmail" placeholder="Entrez votre adresse email" required/>
                                         </FormGroup>
                                         {' '}
                                     </Col>

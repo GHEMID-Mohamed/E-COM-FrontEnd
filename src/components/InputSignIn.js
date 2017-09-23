@@ -34,8 +34,10 @@ export default class InputSignIn extends React.Component {
         const formBody = Object.keys(details).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(details[key])).join('&')
 
         fetch('http://152.77.78.16:8080/HotelBookersWeb/auth/login/', {
+            
             method: 'POST',
             headers: {
+                
                 'Accept': 'application/json',
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
@@ -50,7 +52,7 @@ export default class InputSignIn extends React.Component {
                 })
                 this.props.getStateConnectionProp(true, data.resultat.nom, data.resultat.prenom)
             }
-            else if (data.code == '401') {
+            else {
                 this.setState({
                     connectionState: false,
                     message: data.resultat

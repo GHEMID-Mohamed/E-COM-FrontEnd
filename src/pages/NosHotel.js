@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container} from 'reactstrap'
+import { Container } from 'reactstrap'
 import Header from '../components/Header'
 import BodyHome from '../components/BodyHome'
 import Footer from '../components/Footer'
@@ -11,14 +11,14 @@ export default class HomePage extends Component {
         return (
             <div>
                 <Container>
-                <Header></Header>
-                <hr />
-                <br />
-                <ChambreDispo></ChambreDispo>
-                <br />
-                <br />
-                <br />
-                <Footer></Footer>
+                    <Header></Header>
+                    <hr />
+                    <br />
+                    <ChambreDispo></ChambreDispo>
+                    <br />
+                    <br />
+                    <br />
+                    <Footer></Footer>
                 </Container>
             </div>
         );

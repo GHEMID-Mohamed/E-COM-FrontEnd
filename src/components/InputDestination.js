@@ -58,7 +58,7 @@ export default class InputDestination extends Component {
       <div>
         <SearchInput className="search-input" onChange={this.searchUpdated} ref="searchInput" value={this.state.value}/>
         {filteredCountries.map(countrie => {
-          if (this.state.searchTerm.length > 2 && !this.state.resultFound){
+          if (this.state.searchTerm.length > 1 && !this.state.resultFound){
             return (
               <InputResult value={countrie.name} listenOnCLick={this.resultHandleClick}></InputResult>
             )

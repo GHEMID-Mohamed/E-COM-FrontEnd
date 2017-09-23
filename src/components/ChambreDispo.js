@@ -3,7 +3,7 @@ import { Button, Row, Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import ConnectedClient from '../components/ConnectedClient'
 import CardHotel from '../components/CardHotel'
-import  LoadingIndicator  from 'react-loading-indicator'
+import LoadingIndicator from 'react-loading-indicator'
 
 export default class ChambreDispo extends Component {
 
@@ -34,9 +34,12 @@ export default class ChambreDispo extends Component {
     render() {
 
         if (this.state.listChambre === '') return (
-            <center><LoadingIndicator
+            <Row>
+                <Col md={{size : 1, push: 12}}>
+                    <LoadingIndicator
                         segmentWidth="50"
-                     /></center>
+                    />
+                </Col></Row>
         )
 
         const listItems = this.state.listChambre.map((object) =>

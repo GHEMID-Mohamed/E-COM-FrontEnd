@@ -21,6 +21,8 @@ export default class ButtonClient extends Component {
         })
     }
 
+   
+
     render() {
 
         if (!this.state.connected) {
@@ -38,8 +40,7 @@ export default class ButtonClient extends Component {
         else {
             return (
                 <div>
-                    <ConnectedClient listenToLogOutProp={this.listenToLogOut}></ConnectedClient>
-                </div>
+                    </div>
             );
         }
     }

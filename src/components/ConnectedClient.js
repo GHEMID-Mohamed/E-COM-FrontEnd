@@ -13,6 +13,7 @@ export default class ConnectedClient extends Component {
         };
 
         this.handleClick = this.handleClick.bind(this)
+
     }
 
     toggle() {
@@ -22,8 +23,10 @@ export default class ConnectedClient extends Component {
     }
 
     handleClick() {
-        this.props.listenToLogOutProp()
+        this.props.listenToDeconnexionProp(false)
     }
+
+    
 
     render() {
         return (
@@ -32,15 +35,16 @@ export default class ConnectedClient extends Component {
                     <Col md="1">
                         <img src="http://wfarm1.dataknet.com/static/resources/icons/set113/91f685ca.png" height="30" width="30" />
                     </Col>
-                    <Col md="11">
-                        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                    <Col md="3"><p> {this.props.nomProp} &nbsp; {this.props.prenomProp}</p></Col>
+                    <Col md="8">
+                        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} >
                             <DropdownToggle caret>
                                 <img src="http://www.freeiconspng.com/uploads/menu-icon-13.png"
                                     height="20" width="20" />
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem header>Paramètres</DropdownItem>
-                                <Link to="/mesReservations">Mes reservations<DropdownItem></DropdownItem></Link>
+                               <DropdownItem><Link to="/mesReservations">Mes reservations</Link></DropdownItem>
                                 <DropdownItem onClick={this.handleClick}>Déconnecter</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>

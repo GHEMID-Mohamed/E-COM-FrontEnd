@@ -133,7 +133,7 @@ export default class Panier extends Component {
                     <CardBlock>
                         <CardTitle>Ma liste </CardTitle>
                         {/*onUpdate={this.handleUpdate}*/}
-                        <Scrollbars style={{ width: 310, height: 550 }}
+                        <Scrollbars style={{ width: 310, height: 350 }}
                              ref="scrollbar"
                             onScroll={this.handleScroll}>
 

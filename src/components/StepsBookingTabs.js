@@ -169,6 +169,10 @@ export default class StepsBookingTabs extends Component {
 
                     {/*Payement*/}
                     <TabPane tabId="3">
+                        <p>Connexion ou Inscription</p>
+                    </TabPane>
+
+                    <TabPane tabId="4">
                         <PayementForm
                             prix={this.state.prix}
                             nomHotel={this.state.nomHotel}

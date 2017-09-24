@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "cities.json": "^1.1.0",
+    "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-country-region-selector": "^1.2.1",
     "react-custom-scrollbars": "^4.1.2",
@@ -15,10 +16,12 @@
     "react-scripts": "1.0.13",
     "react-scrollbar": "^0.5.1",
     "react-search-input": "^0.11.2",
+    "react-slick": "^0.15.4",
     "react-spinkit": "^3.0.0",
     "react-sticky": "^6.0.1",
     "react-sticky-el": "^1.0.13",
-    "reactstrap": "^4.8.0"
+    "reactstrap": "^4.8.0",
+    "slick-carousel": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",

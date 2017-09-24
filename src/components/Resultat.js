@@ -126,9 +126,9 @@ export default class Resultat extends Component {
 
                 {/* Chambre trouvé */}
                 <Row>
-
+                    <Col md="8">
                     {chambres}
-
+                    </Col>
                     <Col md="4">
                         <Panier
                             listenReserverButton2={this.listenReserverButton}

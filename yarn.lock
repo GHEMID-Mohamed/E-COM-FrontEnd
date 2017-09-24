@@ -5292,6 +5292,10 @@ react-motion@^0.4.3:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
+react-router-active-component@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-router-active-component/-/react-router-active-component-4.0.0.tgz#36fdd03915168aad521e941a76d19d8c56653533"
+
 react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"

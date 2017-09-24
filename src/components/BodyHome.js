@@ -45,9 +45,8 @@ export default class Body extends Component {
                         <hr />
                     </Col>
                 </Row>
-                <Row>
-                    <ChambreDispo></ChambreDispo>
-                </Row>
+                
+               
 
             </div>
         );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Row, Col, UncontrolledAlert } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import DatePickerDepart from '../components/DatePickerDepart'
 import DatePickerArrive from '../components/DatePickerArrive'
@@ -19,7 +19,8 @@ export default class FormSearch extends Component {
             InputValue: '',
             valueAdulte: 0,
             valueEnfant: 0,
-            listChambre: ''
+            listChambre: '',
+            messageVisible: false
         }
 
         this.getDateArrive = this.getDateArrive.bind(this)
@@ -64,6 +65,11 @@ export default class FormSearch extends Component {
     }
 
     handleSubmit(e) {
+
+        this.setState({
+            messageVisible: !this.state.messageVisible
+        })
+
         if (this.state.dateArrive == "" || this.state.dateDepart == "" || this.state.InputValue == "") {
             console.log('i stop submit')
             e.preventDefault()
@@ -82,7 +88,15 @@ export default class FormSearch extends Component {
                         this.setState({
                             listChambre: data
                         })
-                        this.props.goListenToButtonSearchProp(true, data)
+
+                        if (data.code == 401) {
+                            this.setState({
+                                messageVisible: true,
+                                message: data.resultat
+                            })
+                        }
+                        else
+                            this.props.goListenToButtonSearchProp(true, data)
                         console.log(data)
                     }).catch((error) => {
                         console.error(error);
@@ -100,7 +114,14 @@ export default class FormSearch extends Component {
 
 
 
-            <Form>
+            <Form className="formulaire">
+                <Row>
+                    <Col>
+                        {this.state.messageVisible ? <UncontrolledAlert color="danger">
+                            {this.state.message}
+                        </UncontrolledAlert> : null}
+                    </Col>
+                </Row>
                 <Row>
                     <Col md="11">
                         <FormGroup>

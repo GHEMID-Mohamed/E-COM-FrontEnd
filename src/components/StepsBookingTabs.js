@@ -19,13 +19,22 @@ export default class StepsBookingTabs extends Component {
             nbrAdulte: 0,
             nbrEnfant: 0,
             nbrChambre: 0,
-            nbrLit: 0
+            nbrLit: 0,
+            data: this.props.dataProp,
+            connexionState: this.props.stateConnexionProp,
+            
 
         };
 
         this.activeOnlget2 = this.activeOnlget2.bind(this)
         this.listenPayerButton = this.listenPayerButton.bind(this)
         this.listenBackButton = this.listenBackButton.bind(this)
+        this.buttonNewClicked = this.buttonNewClicked.bind(this)
+    }
+
+    buttonNewClicked() {
+        this.props.buttonNewClickedProps()
+        console.log('clicked from steps booking')
     }
 
     toggle(tab) {
@@ -50,9 +59,14 @@ export default class StepsBookingTabs extends Component {
     }
 
     listenPayerButton() {
-        this.setState({
-            activeTab: '3'
-        })
+        if (this.state.connexionState)
+            this.setState({
+                activeTab: '4'
+            })
+        else
+            this.setState({
+                activeTab: '3'
+            })
     }
 
     listenBackButton() {
@@ -60,6 +74,19 @@ export default class StepsBookingTabs extends Component {
             activeTab: '1'
         })
     }
+
+    componentWillReceiveProps(nextProps) {
+
+        this.setState({
+                connexionState: nextProps.stateConnexionProp,
+                data: nextProps.dataProp
+            })
+
+            console.log('something has changed')
+            console.log(nextProps.dataProp)
+
+    }
+
 
     render() {
         return (
@@ -81,18 +108,27 @@ export default class StepsBookingTabs extends Component {
                             Récapitulatif
                         </NavLink>
                     </NavItem>
-                    <NavItem>
+                    {!this.state.connexionState ? <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '3' })}
                             onClick={() => { this.toggle('3'); }}
                         >
-                            Payement
+                            Identification
                         </NavLink>
-                    </NavItem>
+                    </NavItem> : null}
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '4' })}
                             onClick={() => { this.toggle('4'); }}
+                        >
+                            Payement
+                        </NavLink>
+                    </NavItem>
+
+                    <NavItem>
+                        <NavLink
+                            className={classnames({ active: this.state.activeTab === '5' })}
+                            onClick={() => { this.toggle('5'); }}
                         >
                             Confirmation
                         </NavLink>
@@ -103,7 +139,10 @@ export default class StepsBookingTabs extends Component {
                     <TabPane tabId="1">
                         <Row>
                             <Col sm="12">
-                                <Resultat activeOnglet={this.activeOnlget2}></Resultat>
+                                <Resultat activeOnglet={this.activeOnlget2}
+                                    newClickedProp={this.buttonNewClicked}
+                                    dataProp={this.state.data}
+                                ></Resultat>
                             </Col>
                             <Col>
 

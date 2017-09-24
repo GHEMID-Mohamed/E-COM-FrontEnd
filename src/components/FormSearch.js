@@ -16,8 +16,9 @@ export default class FormSearch extends Component {
             dateArrive: '',
             dateDepart: '',
             InputValue: '',
-            valueAdulte: '',
-            valueEnfant: ''
+            valueAdulte: 0,
+            valueEnfant: 0,
+            listChambre: ''
         }
 
         this.getDateArrive = this.getDateArrive.bind(this)
@@ -67,7 +68,22 @@ export default class FormSearch extends Component {
                 e.preventDefault()
             } else {
                 // DO THE POST
-                console.log('Im ready')
+                
+                fetch('http://152.77.78.16:8080/HotelBookersWeb/hotels/room/search/'+this.state.InputValue+'/'+this.state.dateArrive+'/'+this.state.dateDepart+'/'+this.state.valueAdulte+'/'+this.state.valueEnfant)
+                .then(result => {
+                    return result.json()
+                }).then(data => {
+                    this.setState({
+                        listChambre: data
+                    })
+                    this.props.goListenToButtonSearchProp(true, data)
+                    console.log(data)
+                }).catch((error) => {
+                    console.error(error);
+                });
+
+
+                
             }
         }
 
@@ -162,13 +178,13 @@ export default class FormSearch extends Component {
 
                 <Row>
                     <Col md={{ size: 5, push: 7 }}>
-                        <Link to="/resultat">
+                        
                             <Button color="danger" size="md" onClick={this.handleSubmit}>
                                 <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
                                 &nbsp;
                                 Rechercher
                             </Button>{' '}
-                        </Link>
+                        
                     </Col>
                 </Row>
 

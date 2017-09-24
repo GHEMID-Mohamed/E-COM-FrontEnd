@@ -22,7 +22,8 @@ export default class DatePickerDepart extends Component {
 
   handleSelect(date) {
     if (date != null)
-      this.props.goGetDateDepart(date.format('DD MM YYYY'))
+      this.props.goGetDateDepart(date.format('YYYYMMDD'))
+      console.log(date.format('YYYYMMDD'))
   }
 
   render() {

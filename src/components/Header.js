@@ -7,11 +7,26 @@ import SignInWindow from '../components/SignInWindow'
 
 
 export default class Header extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            connextionState: false
+        }
+
+        this.getStateConnexion = this.getStateConnexion.bind(this)
+    }
+
+    getStateConnexion(state) {
+        this.props.getStateConnexionProp(state)
+    }
+
     render() {
         return (
             <div>
                 <Row>
-                    <Col><SignInWindow></SignInWindow></Col>
+                    <Col><SignInWindow getStateConnexionProps={this.getStateConnexion}></SignInWindow></Col>
                 </Row>
                 <Row>
                     <Col md="2">

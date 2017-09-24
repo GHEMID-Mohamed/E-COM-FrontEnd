@@ -8,6 +8,18 @@ import ChambreDispo from '../components/ChambreDispo'
 
 
 export default class Body extends Component {
+
+    constructor(props) {
+        super(props)
+        
+        this.goListenToButtonSearch = this.goListenToButtonSearch.bind(this)
+    }
+
+    goListenToButtonSearch(state, data) {
+        console.log('fromBodyHome')
+        this.props.goListenToButtonSearchProp(state, data)
+    }
+
     render() {
         return (
             <div className="Body">
@@ -24,7 +36,7 @@ export default class Body extends Component {
                         </Row>
                         <Row>
                             <Col>
-                                <FormSearch></FormSearch>
+                                <FormSearch goListenToButtonSearchProp={this.goListenToButtonSearch}></FormSearch>
                             </Col>
                             <Col>
                                 <img src={bodyImg} alt="Map" height="300" width="280" />

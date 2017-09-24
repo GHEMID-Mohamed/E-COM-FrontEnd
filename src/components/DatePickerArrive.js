@@ -24,7 +24,7 @@ export default class DatePickerArrive extends Component {
 
   handleSelect(date) {
     if(date!=null)
-    this.props.goGetDateArrive(date.format('DD MM YYYY'))
+    this.props.goGetDateArrive(date.format('YYYYMMDD'))
   }
 
   render() {

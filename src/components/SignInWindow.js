@@ -18,6 +18,7 @@ export default class ModalExample extends Component {
         this.toggle = this.toggle.bind(this);
         this.getStateConnection = this.getStateConnection.bind(this)
         this.listenToDeconnexion = this.listenToDeconnexion.bind(this)
+        
     }
 
     toggle() {
@@ -33,6 +34,8 @@ export default class ModalExample extends Component {
             prenom: prenomParam
         })
 
+        this.props.getStateConnexionProps(state)
+
     }
 
     listenToDeconnexion(state) {
@@ -40,6 +43,8 @@ export default class ModalExample extends Component {
             connectionState: state,
             modal: false
         })
+
+        this.props.getStateConnexionProps(state)
     }
 
 

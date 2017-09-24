@@ -5,8 +5,6 @@ import Footer from '../components/Footer'
 import StepsBookingTabs from '../components/StepsBookingTabs'
 
 
-
-
 export default class ResultatPage extends Component {
     render() {
         return (

@@ -6,6 +6,7 @@ import StepsBookingTabs from '../components/StepsBookingTabs'
 import CardChambre from '../components/CardChambre'
 import Panier from '../components/Panier'
 
+
 export default class Resultat extends Component {
 
     constructor(props) {
@@ -22,10 +23,16 @@ export default class Resultat extends Component {
 
         this.goListenButtonInChambre = this.goListenButtonInChambre.bind(this)
         this.listenReserverButton = this.listenReserverButton.bind(this)
+        this.handleClickNew = this.handleClickNew.bind(this)
 
     }
 
-    listenReserverButton (prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
+    handleClickNew() {
+        this.props.newClickedProp()
+        console.log('clicked from result')
+    }
+
+    listenReserverButton(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
 
         console.log('button was clicked from resultats')
 
@@ -38,7 +45,7 @@ export default class Resultat extends Component {
             nbrChambre,
             nbrLit
         )
-        
+
 
 
     }
@@ -64,8 +71,35 @@ export default class Resultat extends Component {
 
     render() {
 
-        var chambres = []
+        var data = this.props.dataProp
+        var i = 0
+        var once = true
+        var chambres = data.resultat.map((element) =>
+            <Col md="4">
+                <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+                    nombreDadultes="2"
+                    nombreEnfants="2"
+                    nombreLits={element.nbLits}
+                    prix={element.prix}
+                    nomHotel={element.hotel.nom}
+                    adresseHotel={element.hotel.adresse}
+                >
+                </CardChambre>
+            </Col>
 
+        )
+        /*
+        var chambres = this.props.dataProp.map((element) =>
+        <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
+            nombreDadultes="2"
+            nombreEnfants="2"
+            nombreLits={element.Resultat.nbLits}
+            prix={element.Resultat.prix}
+            nomHotel={element.Resultat.hotel.nom}
+            adresseHotel={element.Resultat.hotel.adresse}
+        >
+        </CardChambre>) 
+    /*
         for (var i = 0; i < 3; i++) {
             if (i == 0) {
                 chambres.push(<span className='chambres' key={i}>
@@ -96,7 +130,7 @@ export default class Resultat extends Component {
                         </Col>
 
                         <Col md="4"><Panier
-                            listenReserverButton2 = {this.listenReserverButton}
+                            listenReserverButton2={this.listenReserverButton}
                             prix={this.state.prix}
                             nomHotel={this.state.nomHotel}
                             adressHotel={this.state.adressHotel}
@@ -141,7 +175,9 @@ export default class Resultat extends Component {
                     </Row>
 
                 </span>);
+                
         }
+        */
 
         return (
             <div>
@@ -154,16 +190,14 @@ export default class Resultat extends Component {
                     </Col>
 
                     <Col md="6">
-                        <Link to="/">
-                            <Button color="warning" size="md">
+                        <Button color="warning" size="md" onClick={this.handleClickNew}>
 
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/2000px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"
-                                    height="30" width="30" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/2000px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"
+                                height="30" width="30" />
 
-                                <strong>Nouvelle recherche</strong>
+                            <strong>Nouvelle recherche</strong>
 
-                            </Button>
-                        </Link>
+                        </Button>
                     </Col>
 
 
@@ -182,7 +216,24 @@ export default class Resultat extends Component {
 
 
                 {/* Chambre trouvé */}
-                {chambres}
+                <Row>
+
+                    {chambres}
+
+                    <Col md="4">
+                        <Panier
+                            listenReserverButton2={this.listenReserverButton}
+                            prix={this.state.prix}
+                            nomHotel={this.state.nomHotel}
+                            adressHotel={this.state.adressHotel}
+                            nbrAdulte={this.state.nbrAdulte}
+                            nbrEnfant={this.state.nbrEnfant}
+                            nbrChambre={this.state.nbrChambre}
+                            nbrLit={this.state.nbrLit}
+                        >
+                        </Panier>
+                    </Col>
+                </Row>
 
             </div>
         );

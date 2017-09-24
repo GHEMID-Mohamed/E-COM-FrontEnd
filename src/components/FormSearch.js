@@ -14,6 +14,7 @@ export default class FormSearch extends Component {
 
         this.state = {
             dateArrive: '',
+            dateArriveFull: '',
             dateDepart: '',
             InputValue: '',
             valueAdulte: 0,
@@ -27,6 +28,7 @@ export default class FormSearch extends Component {
         this.handleChangeEnfant = this.handleChangeEnfant.bind(this)
         this.handleChangeAdulte = this.handleChangeAdulte.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.getDateArriveFullFormat = this.getDateArriveFullFormat.bind(this)
     }
 
     handleChangeAdulte(e) {
@@ -46,11 +48,15 @@ export default class FormSearch extends Component {
         this.setState({
             InputValue: v
         })
-      
+
     }
 
     getDateArrive(date) {
         this.setState({ dateArrive: date })
+    }
+
+    getDateArriveFullFormat(date) {
+        this.setState({ dateArriveFull: date })
     }
 
     getDateDepart(date) {
@@ -58,32 +64,32 @@ export default class FormSearch extends Component {
     }
 
     handleSubmit(e) {
-        if (this.state.dateArrive=="" || this.state.dateDepart=="" || this.state.InputValue=="") {
+        if (this.state.dateArrive == "" || this.state.dateDepart == "" || this.state.InputValue == "") {
             console.log('i stop submit')
             e.preventDefault()
 
         }
         else {
-            if(this.state.valueAdulte=="" && this.state.valueEnfant=="") {
+            if (this.state.valueAdulte == "" && this.state.valueEnfant == "") {
                 e.preventDefault()
             } else {
                 // DO THE POST
-                
-                fetch('http://152.77.78.16:8080/HotelBookersWeb/hotels/room/search/'+this.state.InputValue+'/'+this.state.dateArrive+'/'+this.state.dateDepart+'/'+this.state.valueAdulte+'/'+this.state.valueEnfant)
-                .then(result => {
-                    return result.json()
-                }).then(data => {
-                    this.setState({
-                        listChambre: data
-                    })
-                    this.props.goListenToButtonSearchProp(true, data)
-                    console.log(data)
-                }).catch((error) => {
-                    console.error(error);
-                });
+
+                fetch('http://152.77.78.16:8080/HotelBookersWeb/hotels/room/search/' + this.state.InputValue + '/' + this.state.dateArrive + '/' + this.state.dateDepart + '/' + this.state.valueAdulte + '/' + this.state.valueEnfant)
+                    .then(result => {
+                        return result.json()
+                    }).then(data => {
+                        this.setState({
+                            listChambre: data
+                        })
+                        this.props.goListenToButtonSearchProp(true, data)
+                        console.log(data)
+                    }).catch((error) => {
+                        console.error(error);
+                    });
 
 
-                
+
             }
         }
 
@@ -110,7 +116,9 @@ export default class FormSearch extends Component {
                     <Col md="auto">
                         <FormGroup>
 
-                            <DatePickerArrive goGetDateArrive={this.getDateArrive} ></DatePickerArrive>
+                            <DatePickerArrive goGetDateArrive={this.getDateArrive}
+                                getDateFullProp={this.getDateArriveFullFormat}
+                            ></DatePickerArrive>
 
                         </FormGroup>
                         {' '}
@@ -118,7 +126,8 @@ export default class FormSearch extends Component {
                     <Col md="auto">
                         <FormGroup>
 
-                            <DatePickerDepart goGetDateDepart={this.getDateDepart} ></DatePickerDepart>
+                            <DatePickerDepart goGetDateDepart={this.getDateDepart}
+                                dateArrive={this.state.dateArriveFull} ></DatePickerDepart>
 
                         </FormGroup>
                         {' '}
@@ -178,13 +187,13 @@ export default class FormSearch extends Component {
 
                 <Row>
                     <Col md={{ size: 5, push: 7 }}>
-                        
-                            <Button color="danger" size="md" onClick={this.handleSubmit}>
-                                <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
-                                &nbsp;
+
+                        <Button color="danger" size="md" onClick={this.handleSubmit}>
+                            <img src="http://www.vincentdeplais.fr/siteAlummi/images/menu-search.png" height="20" width="20" />
+                            &nbsp;
                                 Rechercher
                             </Button>{' '}
-                        
+
                     </Col>
                 </Row>
 

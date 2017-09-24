@@ -8,11 +8,19 @@ export default class DatePickerDepart extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      startDate: ''
+      startDate: '',
+      Arrive: this.props.dateArrive
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
   }
+
+  componentWillReceiveProps(nextProps) {
+    
+            this.setState({
+                    Arrive: nextProps.dateArrive
+                })
+        }
 
   handleChange(date) {
     this.setState({
@@ -27,11 +35,12 @@ export default class DatePickerDepart extends Component {
   }
 
   render() {
+    var selected = this.state.Arrive
     return <DatePicker
       className="DatePicker"
       dateFormat="DD/MM/YYYY"
-      minDate={moment()}
-      excludeDates={[moment(), moment().subtract(1, "days")]}
+      minDate={this.state.Arrive}
+      excludeDates={[this.state.Arrive]}
       selected={this.state.startDate}
       onChange={this.handleChange}
       onSelect={this.handleSelect}

@@ -77,8 +77,6 @@ export default class Resultat extends Component {
         var chambres = data.resultat.map((element) =>
             <Col md="4">
                 <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                    nombreDadultes="2"
-                    nombreEnfants="2"
                     nombreLits={element.nbLits}
                     prix={element.prix}
                     nomHotel={element.hotel.nom}
@@ -88,96 +86,7 @@ export default class Resultat extends Component {
             </Col>
 
         )
-        /*
-        var chambres = this.props.dataProp.map((element) =>
-        <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-            nombreDadultes="2"
-            nombreEnfants="2"
-            nombreLits={element.Resultat.nbLits}
-            prix={element.Resultat.prix}
-            nomHotel={element.Resultat.hotel.nom}
-            adresseHotel={element.Resultat.hotel.adresse}
-        >
-        </CardChambre>) 
-    /*
-        for (var i = 0; i < 3; i++) {
-            if (i == 0) {
-                chambres.push(<span className='chambres' key={i}>
-                    <Row>
-                        <Col md="4">
-                            <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                                nombreDadultes="2"
-                                nombreEnfants="2"
-                                nombreChambres="3"
-                                nombreLits="2"
-                                prix="45"
-                                nomHotel="Pyramide Millénuim"
-                                adresseHotel="01 Rue Jean Léoquet"
-                            >
-                            </CardChambre>
-                        </Col>
-                        <Col md="4">
-                            <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                                nombreDadultes="7"
-                                nombreEnfants="3"
-                                nombreChambres="1"
-                                nombreLits="1"
-                                prix="69"
-                                nomHotel="Pyramide Millénuim"
-                                adresseHotel="01 Rue Jean Léoquet"
-                            >
-                            </CardChambre>
-                        </Col>
-
-                        <Col md="4"><Panier
-                            listenReserverButton2={this.listenReserverButton}
-                            prix={this.state.prix}
-                            nomHotel={this.state.nomHotel}
-                            adressHotel={this.state.adressHotel}
-                            nbrAdulte={this.state.nbrAdulte}
-                            nbrEnfant={this.state.nbrEnfant}
-                            nbrChambre={this.state.nbrChambre}
-                            nbrLit={this.state.nbrLit}
-                        >
-                        </Panier></Col>
-                    </Row>
-                </span >)
-            }
-            else
-                chambres.push(<span className='chambres' key={i}>
-
-                    <Row>
-                        <Col md="4">
-                            <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                                nombreDadultes="2"
-                                nombreEnfants="2"
-                                nombreChambres="3"
-                                nombreLits="2"
-                                prix="85"
-                                nomHotel="Pyramide Millénuim"
-                                adresseHotel="01 Rue Jean Léoquet"
-                            >
-                            </CardChambre>
-                        </Col>
-                        <Col md="4">
-                            <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                                nombreDadultes="2"
-                                nombreEnfants="2"
-                                nombreChambres="3"
-                                nombreLits="2"
-                                prix="77"
-                                nomHotel="Pyramide Millénuim"
-                                adresseHotel="01 Rue Jean Léoquet"
-                            >
-                            </CardChambre>
-                        </Col>
-
-                    </Row>
-
-                </span>);
-                
-        }
-        */
+       
 
         return (
             <div>

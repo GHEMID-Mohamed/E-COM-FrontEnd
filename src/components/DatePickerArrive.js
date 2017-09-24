@@ -18,13 +18,13 @@ export default class DatePickerArrive extends Component {
     this.setState({
       startDate: date
     })
-
-
   }
 
   handleSelect(date) {
-    if(date!=null)
-    this.props.goGetDateArrive(date.format('YYYYMMDD'))
+    if (date != null) {
+      this.props.getDateFullProp(date)
+      this.props.goGetDateArrive(date.format('YYYYMMDD'))
+    }
   }
 
   render() {

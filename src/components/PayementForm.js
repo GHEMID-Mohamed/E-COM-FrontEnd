@@ -153,8 +153,7 @@ export default class PayementForm extends Component {
                 'dateFin': this.props.dateFin,
                 'nbEnfant': '1',
                 'nbAdulte': '1',
-                'idChambre': this.props.idChambre,
-
+                'idChambre': this.props.idChambre
             }
 
 
@@ -173,7 +172,7 @@ export default class PayementForm extends Component {
             }).then(data => {
                 if (data.code == '201') {
                     {
-                    this.props.getStateConnectionProp(true, data.resultat.nom, data.resultat.prenom)
+                    
                     this.props.listenToPayer()
                     }
                 }

@@ -72,6 +72,7 @@ export default class Panier extends Component {
 
 
             this.setState({ indexElement: this.state.indexElement + 1 })
+            console.log(nextProps.idChambre+' from Panier')
 
             if (!this.state.elements.includes(
                 nextProps.prix
@@ -87,6 +88,7 @@ export default class Panier extends Component {
                         nbrEnfant={nextProps.nbrEnfant}
                         nbrChambre={nextProps.nbrChambre}
                         nbrLit={nextProps.nbrLit}
+                        idChambre={nextProps.idChambre}
                     ></PanierElement>
 
                 );
@@ -113,10 +115,11 @@ export default class Panier extends Component {
 
 
 
-    ListenButtonReserver(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
+    ListenButtonReserver(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idChambre) {
         console.log('button was clicked from pannier')
         console.log(prix)
-        this.props.listenReserverButton2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit)
+        console.log(idChambre+' from Panier')
+        this.props.listenReserverButton2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idChambre)
     }
 
 

@@ -18,7 +18,8 @@ export default class Resultat extends Component {
             nbrAdulte: 0,
             nbrEnfant: 0,
             nbrChambre: 0,
-            nbrLit: 0
+            nbrLit: 0,
+            idChambre: ''
         }
 
         this.goListenButtonInChambre = this.goListenButtonInChambre.bind(this)
@@ -32,8 +33,9 @@ export default class Resultat extends Component {
         console.log('clicked from result')
     }
 
-    listenReserverButton(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
+    listenReserverButton(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idChambre) {
 
+        console.log(idChambre+' from Resultat')
         console.log('button was clicked from resultats')
 
         this.props.activeOnglet(
@@ -43,7 +45,8 @@ export default class Resultat extends Component {
             nbrAdulte,
             nbrEnfant,
             nbrChambre,
-            nbrLit
+            nbrLit,
+            idChambre
         )
 
 
@@ -52,7 +55,7 @@ export default class Resultat extends Component {
 
 
 
-    goListenButtonInChambre(event, prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
+    goListenButtonInChambre(event, prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idChambre) {
         this.setState({
             prix: Number(prix),
             nomHotel: nomHotel,
@@ -60,9 +63,13 @@ export default class Resultat extends Component {
             nbrAdulte: Number(nbrAdulte),
             nbrEnfant: Number(nbrEnfant),
             nbrChambre: Number(nbrChambre),
-            nbrLit: Number(nbrLit)
+            nbrLit: Number(nbrLit),
+            idChambre: Number(idChambre)
+
 
         })
+
+        console.log(idChambre+' from resultat')
 
 
     }
@@ -130,6 +137,7 @@ export default class Resultat extends Component {
                             nbrEnfant={this.state.nbrEnfant}
                             nbrChambre={this.state.nbrChambre}
                             nbrLit={this.state.nbrLit}
+                            idChambre={this.state.idChambre}
                         >
                         </Panier>
                     </Col>

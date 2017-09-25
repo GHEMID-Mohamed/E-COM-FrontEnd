@@ -87,7 +87,7 @@ export default class StepsBookingTabs extends Component {
         this.setState({ CollapseSignUp: !this.state.CollapseSignUp });
     }
 
-    activeOnlget2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idcHambre) {
+    activeOnlget2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idChambre) {
         this.setState({
             activeTab: '2',
             prix: Number(prix),
@@ -97,14 +97,15 @@ export default class StepsBookingTabs extends Component {
             nbrEnfant: Number(nbrEnfant),
             nbrChambre: Number(nbrChambre),
             nbrLit: Number(nbrLit),
-            idChambre: Number(idcHambre)
+            idChambre: Number(idChambre)
         });
+
+        console.log(idChambre+' from Steps')
     }
 
     listenPayerButton(idChambre) {
         if (this.state.connexionState)
             this.setState({
-                idChambre: idChambre,
                 activeTab: '4',
                 PayementFormVisible: !this.state.PayementFormVisible
             })

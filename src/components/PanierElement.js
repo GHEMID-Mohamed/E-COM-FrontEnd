@@ -23,6 +23,7 @@ export default class PanierElement extends Component {
             nbrEnfant: this.props.nbrEnfant,
             nbrChambre: this.props.nbrChambre,
             nbrLit: this.props.nbrLit,
+            idChambre: this.props.idChambre,
             visible: true
         }
 
@@ -36,7 +37,8 @@ export default class PanierElement extends Component {
     }
 
     handleClick() {
-        this.props.ListenButtonReserver(this.props.prix, this.props.nomHotel, this.props.adressHotel, this.props.nbrAdulte, this.props.nbrEnfant, this.props.nbrChambre, this.props.nbrLit)
+        this.props.ListenButtonReserver(this.props.prix, this.props.nomHotel, this.props.adressHotel, this.props.nbrAdulte, this.props.nbrEnfant, this.props.nbrChambre, this.props.nbrLit, this.props.idChambre)
+        console.log(this.props.idChambre+' from Panier Element')
     }
 
 

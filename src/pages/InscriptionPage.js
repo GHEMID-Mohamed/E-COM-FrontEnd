@@ -15,7 +15,6 @@ export default class InscriptionPage extends Component {
                         <InputSignUp></InputSignUp>
                         <br />
                         <br />
-                        <Footer></Footer>
                     </Container>
                 </div>
             </div>

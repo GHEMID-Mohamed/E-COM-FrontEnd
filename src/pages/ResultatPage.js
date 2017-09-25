@@ -17,7 +17,6 @@ export default class ResultatPage extends Component {
                         <StepsBookingTabs></StepsBookingTabs>
                         <br />
                         <br />
-                        <Footer></Footer>
                     </Container>
                 </div>
             </div>

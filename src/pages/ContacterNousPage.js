@@ -59,7 +59,6 @@ export default class ContacterNousPage extends Component {
 
                 </Container>
                 <hr />
-                <Footer></Footer>
             </div>
         );
     }

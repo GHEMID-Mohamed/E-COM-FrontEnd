@@ -15,7 +15,7 @@ export default class Recapitulatif extends Component {
     }
 
     handleClick() {
-        this.props.listenPayerButtonProp()
+        this.props.listenPayerButtonProp(this.props.idChambreProp)
     }
 
     handleClickBack() {
@@ -32,7 +32,7 @@ export default class Recapitulatif extends Component {
 
                     <Col>
 
-                        {this.props.nomHotel}
+                        <h4>{this.props.nomHotel} &nbsp;</h4>
                         <Badge color="info" pill>
                             <strong>Hotel</strong>
                         </Badge>{' '}
@@ -48,11 +48,7 @@ export default class Recapitulatif extends Component {
 
                     <br />
 
-                    <Col>
-                        Nombre de chambres
-
-                                    <p>{this.props.nbrChambre}</p>
-                    </Col>
+                    
 
                     <br />
                     <Col>
@@ -62,22 +58,6 @@ export default class Recapitulatif extends Component {
                     <br />
 
 
-                    <Col>
-                        Nombre d'adultes
-
-
-                <p>{this.props.nbrAdulte}</p>
-
-                    </Col>
-                    <br />
-
-                    <Col>
-                        Nombre d'enfants
-
-
-                <p>{this.props.nbrEnfant}</p>
-
-                    </Col>
 
                     <Col>
                         Prix :

@@ -110,7 +110,7 @@ export default class PayementForm extends Component {
             this.setState({
                 stateInput4: 'danger',
                 color4: 'danger',
-               
+
             })
         }
         else {
@@ -146,7 +146,42 @@ export default class PayementForm extends Component {
             e.preventDefault()
 
         } else {
-            console.log('everyThing is good :) ')
+
+            const details = {
+                'token': this.props.token,
+                'dateDeb': this.props.dateDeb,
+                'dateFin': this.props.dateFin,
+                'nbEnfant': '1',
+                'nbAdulte': '1',
+                'idChambre': this.props.idChambre,
+
+            }
+
+
+            const formBody = Object.keys(details).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(details[key])).join('&')
+
+            fetch('http://152.77.78.16:8080/HotelBookersWeb/bookings/bookRoom/', {
+
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formBody
+            }).then(result => {
+                return result.json()
+            }).then(data => {
+                if (data.code == '201') {
+                    {
+                    this.props.getStateConnectionProp(true, data.resultat.nom, data.resultat.prenom)
+                    this.props.listenToPayer()
+                    }
+                }
+                //console.log(data)
+            }).catch((error) => {
+                console.error(error);
+            });
+
         }
     }
 

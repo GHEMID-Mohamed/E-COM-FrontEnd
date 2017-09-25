@@ -187,7 +187,7 @@ export default class InputSignUp extends React.Component {
                     Mes informations personnelles
                     </h4>
                 <Row>
-                    <Col md="7">
+                    <Col>
                         <Jumbotron>
                             <Row>
                                 <Col>

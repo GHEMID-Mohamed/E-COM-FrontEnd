@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap'
+import {
+    TabContent, TabPane, Nav, NavItem, NavLink, Card, Button,
+    CardTitle, CardText, Row, Col, Collapse, CardBlock
+} from 'reactstrap'
 import classnames from 'classnames';
 import Resultat from '../components/Resultat'
 import Recapitulatif from '../components/Recapitulatif'
 import PayementForm from '../components/PayementForm'
 import Confirmation from '../components/Confirmation'
+import InputSignIn from '../components/InputSignIn'
+import InputSignUp from '../components/InputSignUp'
 
 export default class StepsBookingTabs extends Component {
     constructor(props) {
@@ -20,16 +25,45 @@ export default class StepsBookingTabs extends Component {
             nbrEnfant: 0,
             nbrChambre: 0,
             nbrLit: 0,
+            idChambre: '',
             data: this.props.dataProp,
             connexionState: this.props.stateConnexionProp,
-            
-
+            collapseSignIn: false,
+            CollapseSignUp: false,
+            PayementFormVisible: false,
+            tokenState: '',
+            confirmationVisible: false
         };
 
         this.activeOnlget2 = this.activeOnlget2.bind(this)
         this.listenPayerButton = this.listenPayerButton.bind(this)
         this.listenBackButton = this.listenBackButton.bind(this)
         this.buttonNewClicked = this.buttonNewClicked.bind(this)
+        this.toggleCollapseSignIn = this.toggleCollapseSignIn.bind(this)
+        this.toggleCollapseSignUp = this.toggleCollapseSignUp.bind(this)
+        this.getStateCnTb = this.getStateCnTb.bind(this)
+        this.listenToPayerFin = this.listenToPayerFin.bind(this)
+    }
+
+    listenToPayerFin() {
+        this.setState({
+            activeTab: '5',
+            confirmationVisible: true
+        })
+    }
+
+    getStateCnTb(state, name, prenom, token) {
+        this.setState({
+            connexionState: state,
+            collapseSignIn: false,
+            tokenState: token,
+            activeTab: '4'
+        })
+
+        console.log(token)
+        console.log(this.props.dateDebProp)
+        console.log(this.props.dateFinProp)
+        console.log(this.state.idChambre)
     }
 
     buttonNewClicked() {
@@ -45,7 +79,15 @@ export default class StepsBookingTabs extends Component {
         }
     }
 
-    activeOnlget2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit) {
+    toggleCollapseSignIn() {
+        this.setState({ collapseSignIn: !this.state.collapseSignIn });
+    }
+
+    toggleCollapseSignUp() {
+        this.setState({ CollapseSignUp: !this.state.CollapseSignUp });
+    }
+
+    activeOnlget2(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idcHambre) {
         this.setState({
             activeTab: '2',
             prix: Number(prix),
@@ -54,14 +96,17 @@ export default class StepsBookingTabs extends Component {
             nbrAdulte: Number(nbrAdulte),
             nbrEnfant: Number(nbrEnfant),
             nbrChambre: Number(nbrChambre),
-            nbrLit: Number(nbrLit)
+            nbrLit: Number(nbrLit),
+            idChambre: Number(idcHambre)
         });
     }
 
-    listenPayerButton() {
+    listenPayerButton(idChambre) {
         if (this.state.connexionState)
             this.setState({
-                activeTab: '4'
+                idChambre: idChambre,
+                activeTab: '4',
+                PayementFormVisible: !this.state.PayementFormVisible
             })
         else
             this.setState({
@@ -78,12 +123,12 @@ export default class StepsBookingTabs extends Component {
     componentWillReceiveProps(nextProps) {
 
         this.setState({
-                connexionState: nextProps.stateConnexionProp,
-                data: nextProps.dataProp
-            })
+            connexionState: nextProps.stateConnexionProp,
+            data: nextProps.dataProp
+        })
 
-            console.log('something has changed')
-            console.log(nextProps.dataProp)
+        console.log('something has changed')
+        console.log(nextProps.dataProp)
 
     }
 
@@ -164,32 +209,66 @@ export default class StepsBookingTabs extends Component {
                             nbrLit={this.state.nbrLit}
                             listenPayerButtonProp={this.listenPayerButton}
                             listenBackButtonProp={this.listenBackButton}
+                            idChambreProp={this.state.idChambre}
                         ></Recapitulatif>
                     </TabPane>
 
                     {/*Payement*/}
                     <TabPane tabId="3">
-                        <p>Connexion ou Inscription</p>
+                        <Row>
+                            <Col md={{ push: 1 }}>
+                                <br />
+                                <Button color="primary" onClick={this.toggleCollapseSignIn} style={{ marginBottom: '1rem' }}>S'identifier</Button>
+                                <Collapse isOpen={this.state.collapseSignIn}>
+                                    <Card>
+                                        <CardBlock>
+                                            <InputSignIn
+                                                getStateConnectionProp={this.getStateCnTb}>
+                                            </InputSignIn>
+                                        </CardBlock>
+                                    </Card>
+                                </Collapse>
+                            </Col>
+                            <Col md={{ push: 1 }}>
+                                <br />
+                                <Button color="success" onClick={this.toggleCollapseSignUp} style={{ marginBottom: '1rem' }}>S'inscrire</Button>
+
+                                <Collapse isOpen={this.state.CollapseSignUp}>
+                                    <Card>
+                                        <CardBlock>
+                                            <InputSignUp></InputSignUp>
+                                        </CardBlock>
+                                    </Card>
+                                </Collapse>
+                            </Col>
+                        </Row>
                     </TabPane>
 
                     <TabPane tabId="4">
-                        <PayementForm
-                            prix={this.state.prix}
-                            nomHotel={this.state.nomHotel}
-                            adressHotel={this.state.adressHotel}
-                            nbrAdulte={this.state.nbrAdulte}
-                            nbrEnfant={this.state.nbrEnfant}
-                            nbrChambre={this.state.nbrChambre}
-                            nbrLit={this.state.nbrLit}
-                        ></PayementForm>
+                        {this.state.connexionState ?
+                            <PayementForm
+                                prix={this.state.prix}
+                                nomHotel={this.state.nomHotel}
+                                adressHotel={this.state.adressHotel}
+                                nbrAdulte={this.state.nbrAdulte}
+                                nbrEnfant={this.state.nbrEnfant}
+                                nbrChambre={this.state.nbrChambre}
+                                nbrLit={this.state.nbrLit}
+                                idChambre={this.state.idChambre}
+                                token={this.state.tokenState}
+                                dateDeb={this.props.dateDebProp}
+                                dateFin={this.props.dateFinProp}
+                                listenToPayer={this.props.listenToPayerFin}
+                            ></PayementForm> : null
+                        }
                     </TabPane>
 
                     {/*Confirmation*/}
                     <TabPane tabId="4">
-                        <Confirmation></Confirmation>
+                        {this.state.confirmationVisible ? <Confirmation></Confirmation> : null}
                     </TabPane>
                 </TabContent>
-            </div>
+            </div >
         );
     }
 }

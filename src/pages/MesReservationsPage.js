@@ -19,7 +19,6 @@ export default class ResultatPage extends Component {
                         <MesReservation></MesReservation>
                         <br />
                         <br />
-                        <Footer></Footer>
                     </Container>
                 </div>
             </div>

@@ -81,12 +81,14 @@ export default class Resultat extends Component {
                     prix={element.prix}
                     nomHotel={element.hotel.nom}
                     adresseHotel={element.hotel.adresse}
+                    idChambre={element.id} 
                 >
                 </CardChambre>
             </Col>
 
+
         )
-       
+
 
         return (
             <div>
@@ -111,24 +113,13 @@ export default class Resultat extends Component {
 
 
                 </Row>
-                <Row>
-                    <Col md="9">
-                        <Alert color="success">
-                            {/*Hotel trouvé*/}
-                            <strong>Récapitulatif de votre recherche :</strong> {/*Nombre de nuit*/} du {/*Date arrivé*/} au {/*Date arrivé*/}.
-                        </Alert>
-                    </Col>
-
-
-                </Row>
 
 
 
                 {/* Chambre trouvé */}
                 <Row>
-                    <Col md="8">
                     {chambres}
-                    </Col>
+
                     <Col md="4">
                         <Panier
                             listenReserverButton2={this.listenReserverButton}

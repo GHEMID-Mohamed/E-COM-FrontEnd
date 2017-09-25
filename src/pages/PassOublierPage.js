@@ -16,7 +16,6 @@ export default class PassOublierPage extends Component {
                         <FormPassOublier></FormPassOublier>
                         <br />
                         <br />
-                        <Footer></Footer>
                     </Container>
                 </div>
             </div>

@@ -14,12 +14,27 @@ export default class Body extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            dateDebut : '',
+            dateFinn : ''
+        }
+
         this.goListenToButtonSearch = this.goListenToButtonSearch.bind(this)
+        this.getDateDebFin = this.getDateDebFin.bind(this)
     }
 
     goListenToButtonSearch(state, data) {
         console.log('fromBodyHome')
         this.props.goListenToButtonSearchProp(state, data)
+        
+    }
+
+    getDateDebFin(dateDeb, dateFin) {
+        this.setState({
+            dateDebut: dateDeb,
+            dateFinn: dateFin
+        })
+        this.props.goGetDatesProp(dateDeb, dateFin)
     }
 
     render() {
@@ -37,7 +52,8 @@ export default class Body extends Component {
                 </Row>
                 <Row>
                     <Col md="6">
-                        <FormSearch goListenToButtonSearchProp={this.goListenToButtonSearch}></FormSearch>
+                        <FormSearch goListenToButtonSearchProp={this.goListenToButtonSearch}
+                                    goGetDateDebEtFin={this.getDateDebFin}></FormSearch>
                     </Col>
                     <Col md="6">
                         <SimpleSlider></SimpleSlider>

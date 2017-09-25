@@ -72,6 +72,9 @@ export default class FormSearch extends Component {
 
         if (this.state.dateArrive == "" || this.state.dateDepart == "" || this.state.InputValue == "") {
             console.log('i stop submit')
+            this.setState({
+                message: 'Vous devez remplir tous les champs'
+            })
             e.preventDefault()
 
         }
@@ -97,6 +100,7 @@ export default class FormSearch extends Component {
                         }
                         else
                             this.props.goListenToButtonSearchProp(true, data)
+                            this.props.goGetDateDebEtFin(this.state.dateArrive, this.state.dateDepart)
                         console.log(data)
                     }).catch((error) => {
                         console.error(error);
@@ -214,6 +218,8 @@ export default class FormSearch extends Component {
                             &nbsp;
                                 Rechercher
                             </Button>{' '}
+
+                           
 
                     </Col>
                 </Row>

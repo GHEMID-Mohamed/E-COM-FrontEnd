@@ -11,36 +11,46 @@ export default class HomePage extends Component {
         super(props)
 
         this.state = {
-            StepsBookingTabsVisible : false,
+            StepsBookingTabsVisible: false,
             BodyHomeVisible: true,
             connexionState: false,
-            Data: false
+            Data: false,
+            dateDeb: '',
+            dateFinn: ''
         }
 
         this.goListenToButtonSearch = this.goListenToButtonSearch.bind(this)
         this.buttonNewClickedd = this.buttonNewClickedd.bind(this)
         this.getConnexionState = this.getConnexionState.bind(this)
+        this.getDates = this.getDates.bind(this)
+    }
+
+    getDates(dateDebut, dateFin) {
+        this.setState({
+            dateDeb: dateDebut,
+            dateFinn: dateFin
+        })
     }
 
     getConnexionState(state) {
         this.setState({
-          connexionState: state
+            connexionState: state
         })
-        console.log('state connexion is '+state+' from HomePage') 
+        console.log('state connexion is ' + state + ' from HomePage')
     }
 
     buttonNewClickedd() {
         this.setState({
             StepsBookingTabsVisible: !this.state.StepsBookingTabsVisible,
             BodyHomeVisible: !this.state.BodyHomeVisible
-        }) 
+        })
     }
 
     goListenToButtonSearch(state, data) {
         this.setState({
             StepsBookingTabsVisible: !this.state.StepsBookingTabsVisible,
             BodyHomeVisible: !this.state.BodyHomeVisible,
-            Data : data
+            Data: data
         })
 
         console.log(this.state.Data)
@@ -49,21 +59,22 @@ export default class HomePage extends Component {
     render() {
         return (
             <div>
-                <Header getStateConnexionProp = {this.getConnexionState}></Header>
+                <Header getStateConnexionProp={this.getConnexionState}></Header>
                 <hr />
                 <br />
                 {this.state.StepsBookingTabsVisible ? <StepsBookingTabs
-                             buttonNewClickedProps={this.buttonNewClickedd}
-                             dataProp={this.state.Data}
-                             stateConnexionProp={this.state.connexionState}
-                             
+                    buttonNewClickedProps={this.buttonNewClickedd}
+                    dataProp={this.state.Data}
+                    stateConnexionProp={this.state.connexionState}
+                    dateDebProp={this.state.dateDeb}
+                    dateFinProp={this.state.dateFinn}
                 ></StepsBookingTabs> : null}
                 {this.state.BodyHomeVisible ? <BodyHome goListenToButtonSearchProp={this.goListenToButtonSearch}
-                                                         ></BodyHome> : null}
+                                                        goGetDatesProp={this.getDates}
+                ></BodyHome> : null}
                 <br />
                 <br />
                 <br />
-                <Footer></Footer>
                 <hr />
             </div>
         )

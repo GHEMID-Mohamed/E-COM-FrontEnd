@@ -81,22 +81,25 @@ export default class Resultat extends Component {
         var data = this.props.dataProp
         var i = 0
         var once = true
-        console.log('lenght :' + Object.keys(data.resultat).length)
+
+
 
         var chambres = data.resultat.map((element, index) =>
 
-            (index == 2 || index == 5  || index == 8  || index == 11 || index == 14 ) ? <Col md="4"></Col>
-            :
-            <Col md="4">
-                <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
-                    nombreLits={element.nbLits}
-                    prix={element.prix}
-                    nomHotel={element.hotel.nom}
-                    adresseHotel={element.hotel.adresse}
-                    idChambre={element.id}
-                >
-                </CardChambre>
-            </Col>
+            (index == 2 || index == 5 ||  index == 8 || index == 11 || index == 14) ? <Col md="4"></Col>
+                :
+                <Col md="4">
+                    <CardChambre listenButton={this.goListenButtonInChambre}
+                        nombreLits={element.nbLits}
+                        prix={element.prix}
+                        nomHotel={element.hotel.nom}
+                        adresseHotel={element.hotel.adresse}
+                        idChambre={element.id}
+                        //srcProp={element.photos.url}
+                        srcProp={element.photos[0].url}
+                    >
+                    </CardChambre>
+                </Col>
 
 
         )

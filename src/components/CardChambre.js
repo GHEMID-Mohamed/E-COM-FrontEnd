@@ -44,7 +44,7 @@ export default class CardChambre extends Component {
                     <div class="container">
                         <div className="imgChambre">
                             <CardImg onClick={this.toggle}
-                                top width="100%" src={this.props.src} alt="Chambre"
+                                top width="100%" src={this.props.srcProp} alt="Chambre"
                             />
                         </div>
                         <div className="overlay">

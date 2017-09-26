@@ -62,7 +62,7 @@ export default class StepsBookingTabs extends Component {
             activeTab: '4'
         })
 
-        console.log(token+' from Booking')
+        console.log(token + ' from Booking')
         console.log(this.props.dateDebProp)
         console.log(this.props.dateFinProp)
         console.log(this.state.idChambre)
@@ -135,7 +135,7 @@ export default class StepsBookingTabs extends Component {
             tokenState: nextProps.token
         })
 
-        console.log('state last token from Tabs'+ nextProps.token)
+        console.log('state last token from Tabs' + nextProps.token)
         console.log('something has changed')
         console.log(nextProps.dataProp)
 
@@ -175,7 +175,7 @@ export default class StepsBookingTabs extends Component {
                             className={classnames({ active: this.state.activeTab === '4' })}
                             onClick={() => { this.toggle('4'); }}
                         >
-                            Payement
+                            Paiement
                         </NavLink>
                     </NavItem>
 
@@ -209,7 +209,7 @@ export default class StepsBookingTabs extends Component {
                     <TabPane tabId="2">
 
                         <Recapitulatif
-                            src="http://img-ovh-cloud.zszywka.pl/0/0229/6107-elegancka-sypialnia.jpg"
+                            src="http://designingflicks.com/images/hotel-svg-12.png"
                             prix={this.state.prix}
                             nomHotel={this.state.nomHotel}
                             adressHotel={this.state.adressHotel}
@@ -225,10 +225,34 @@ export default class StepsBookingTabs extends Component {
 
                     {/*Payement*/}
                     <TabPane tabId="3">
+                        <br />
+                        <h5>Veuillez vous connecter ou vous s'inscrire pour pouvoir continuer</h5>
+                        <hr />
                         <Row>
-                            <Col md={{ push: 1 }}>
+                            <Col>
+                                <Button color="success" onClick={this.toggleCollapseSignUp} style={{ marginBottom: '1rem' }}>S'inscrire</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="auto">
                                 <br />
+                                <Collapse isOpen={this.state.CollapseSignUp}>
+                                    <Card>
+                                        <CardBlock>
+                                            <InputSignUp></InputSignUp>
+                                        </CardBlock>
+                                    </Card>
+                                </Collapse>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
                                 <Button color="primary" onClick={this.toggleCollapseSignIn} style={{ marginBottom: '1rem' }}>S'identifier</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="auto">
+                                <br />
                                 <Collapse isOpen={this.state.collapseSignIn}>
                                     <Card>
                                         <CardBlock>
@@ -239,19 +263,8 @@ export default class StepsBookingTabs extends Component {
                                     </Card>
                                 </Collapse>
                             </Col>
-                            <Col md={{ push: 1 }}>
-                                <br />
-                                <Button color="success" onClick={this.toggleCollapseSignUp} style={{ marginBottom: '1rem' }}>S'inscrire</Button>
-
-                                <Collapse isOpen={this.state.CollapseSignUp}>
-                                    <Card>
-                                        <CardBlock>
-                                            <InputSignUp></InputSignUp>
-                                        </CardBlock>
-                                    </Card>
-                                </Collapse>
-                            </Col>
                         </Row>
+
                     </TabPane>
 
                     <TabPane tabId="4">

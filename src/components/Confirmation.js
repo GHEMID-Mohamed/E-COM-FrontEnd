@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu,
-         DropdownItem, Row, Col, Alert, Button } from 'reactstrap'
+import {
+    Dropdown, DropdownToggle, DropdownMenu,
+    DropdownItem, Row, Col, Alert, Button
+} from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 export default class Confirmation extends Component {
 
@@ -16,17 +19,21 @@ export default class Confirmation extends Component {
                             <center>Reservation <strong>réussi</strong></center>
                         </Col>
                     </Row>
+                    <br />
+                    <hr />
                     <Row>
                         <Col>
                             <center>
-                                <Button color="warning" size="md" onClick={this.handleClickNew}>
+                                <Link to="/">
+                                    <Button color="warning" size="md" onClick={this.handleClickNew}>
 
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/2000px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"
-                                        height="30" width="30" />
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/2000px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"
+                                            height="30" width="30" />
 
-                                    <strong>Nouvelle recherche</strong>
+                                        <strong>Nouvelle recherche</strong>
 
-                                </Button>
+                                    </Button>
+                                </Link>
                             </center>
                         </Col>
                     </Row>

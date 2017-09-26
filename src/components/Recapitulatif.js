@@ -27,7 +27,7 @@ export default class Recapitulatif extends Component {
             <div>
                 <br />
                 <Row>
-                    <Col><img height="130" width="200" src={this.props.src} alt="Chambre" /></Col>
+                    <Col><img height="150" width="150" src={this.props.src} alt="Chambre" /></Col>
 
 
                     <Col>

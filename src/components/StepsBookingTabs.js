@@ -43,6 +43,8 @@ export default class StepsBookingTabs extends Component {
         this.toggleCollapseSignUp = this.toggleCollapseSignUp.bind(this)
         this.getStateCnTb = this.getStateCnTb.bind(this)
         this.listenToPayerFin = this.listenToPayerFin.bind(this)
+
+        
     }
 
     listenToPayerFin() {
@@ -119,6 +121,10 @@ export default class StepsBookingTabs extends Component {
         this.setState({
             activeTab: '1'
         })
+    }
+
+    componentWillMount() {
+        console.log('state from steps booking tab : '+this.props.stateConnexionProp)
     }
 
     componentWillReceiveProps(nextProps) {

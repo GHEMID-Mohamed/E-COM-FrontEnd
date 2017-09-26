@@ -18,8 +18,9 @@ export default class Header extends Component {
         this.getStateConnexion = this.getStateConnexion.bind(this)
     }
 
-    getStateConnexion() {
-        this.props.getStateConnexionProp3()
+    getStateConnexion(state) {
+        this.props.getStateConnexionProp3(state)
+        console.log('state from Header '+state)
     }
 
     render() {

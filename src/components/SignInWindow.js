@@ -35,16 +35,17 @@ export default class ModalExample extends Component {
         })
 
         this.props.getStateConnexionProps(state)
+        console.log('state from signInWindows '+state)
 
     }
 
-    listenToDeconnexion() {
+    listenToDeconnexion(state) {
         this.setState({
             connectionState: false,
             modal: false
         })
 
-        this.props.getStateConnexionProps()
+        this.props.getStateConnexionProps(false)
     }
 
 

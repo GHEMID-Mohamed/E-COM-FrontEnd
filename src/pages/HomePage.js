@@ -32,10 +32,12 @@ export default class HomePage extends Component {
         })
     }
 
-    getConnexionState2() {
+    getConnexionState2(state) {
         this.setState({
-            connexionState: false
+            connexionState: state
         })
+
+        console.log('state from homePage '+state)
     }
 
     buttonNewClickedd() {

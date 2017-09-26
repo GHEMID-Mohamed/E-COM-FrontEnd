@@ -149,9 +149,10 @@ export default class InputSignUp extends React.Component {
                         messageFin: data.resultat,
                         colorAltert: 'success'
                     })
-                    this.props.getStateProp(true)
                     this.props.getStateConnectionProp(true, data.resultat.nom, data.resultat.prenom)
                     window.scrollTo(0, 0)
+                    this.props.getStateProp(true)
+                    
                 }
                 else  {
                     this.setState({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     TabContent, TabPane, Nav, NavItem, NavLink, Card, Button,
-    CardTitle, CardText, Row, Col, Collapse, CardBlock
+    CardTitle, CardText, Row, Col, Collapse, CardBlock, Alert
 } from 'reactstrap'
 import classnames from 'classnames';
 import Resultat from '../components/Resultat'
@@ -32,7 +32,9 @@ export default class StepsBookingTabs extends Component {
             CollapseSignUp: false,
             PayementFormVisible: false,
             tokenState: '',
-            confirmationVisible: false
+            confirmationVisible: false,
+            emailSent: '',
+            messageAfterSingUp: ''
         };
 
         this.activeOnlget2 = this.activeOnlget2.bind(this)
@@ -43,9 +45,18 @@ export default class StepsBookingTabs extends Component {
         this.toggleCollapseSignUp = this.toggleCollapseSignUp.bind(this)
         this.getStateCnTb = this.getStateCnTb.bind(this)
         this.listenToPayerFin = this.listenToPayerFin.bind(this)
-
-
+        this.handeSignUp = this.handeSignUp.bind(this)
     }
+
+    handeSignUp(state, nom, prenom) {
+
+        this.setState({
+            collapseSignIn: !this.state.collapseSignIn,
+            CollapseSignUp: !this.state.CollapseSignUp,
+            messageAfterSingUp: 'Inscription réussi, veuillez maintenant vous connecter'
+        })
+    }
+
 
     listenToPayerFin() {
         this.setState({
@@ -239,7 +250,9 @@ export default class StepsBookingTabs extends Component {
                                 <Collapse isOpen={this.state.CollapseSignUp}>
                                     <Card>
                                         <CardBlock>
-                                            <InputSignUp></InputSignUp>
+                                            <InputSignUp
+                                                getStateConnectionProp={this.handeSignUp}
+                                            ></InputSignUp>
                                         </CardBlock>
                                     </Card>
                                 </Collapse>
@@ -253,11 +266,16 @@ export default class StepsBookingTabs extends Component {
                         <Row>
                             <Col md="auto">
                                 <br />
+                                <Alert color="success">
+                                    <strong>{this.state.messageAfterSingUp}</strong>
+                                </Alert>
+                                <br />
                                 <Collapse isOpen={this.state.collapseSignIn}>
                                     <Card>
                                         <CardBlock>
                                             <InputSignIn
-                                                getStateConnectionProp={this.getStateCnTb}>
+                                                getStateConnectionProp={this.getStateCnTb}
+                                            >
                                             </InputSignIn>
                                         </CardBlock>
                                     </Card>

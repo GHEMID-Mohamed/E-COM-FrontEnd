@@ -34,10 +34,10 @@ export default class InputSignIn extends React.Component {
         const formBody = Object.keys(details).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(details[key])).join('&')
 
         fetch('http://152.77.78.16:8080/HotelBookersWeb/auth/login/', {
-            
+
             method: 'POST',
             headers: {
-                
+
                 'Accept': 'application/json',
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
@@ -50,7 +50,7 @@ export default class InputSignIn extends React.Component {
                     connectionState: true,
                     message: ''
                 })
-                console.log('token :'+data.resultat.token)
+                console.log('token :' + data.resultat.token)
                 this.props.getStateConnectionProp(true, data.resultat.nom, data.resultat.prenom, data.resultat.token)
             }
             else {
@@ -64,7 +64,7 @@ export default class InputSignIn extends React.Component {
             console.error(error);
         });
 
-       
+
     }
 
     handleChangeEmail(e) {
@@ -89,7 +89,9 @@ export default class InputSignIn extends React.Component {
                         <FormGroup>
                             <Label for="exampleEmail" hidden>Email</Label>
                             <Input type="email" name="email" id="exampleEmail" placeholder="Email"
-                                onChange={this.handleChangeEmail} required />
+                                onChange={this.handleChangeEmail}
+                                pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                                required />
                         </FormGroup>
                         {' '}
                         <FormGroup>

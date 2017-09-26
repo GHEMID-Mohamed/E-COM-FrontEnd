@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import {
     Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Col,
-    ListGroup, ListGroupItem
+    ListGroup, ListGroupItem, Table
 } from 'reactstrap';
 
 export default class MesReservation extends Component {
@@ -12,26 +12,44 @@ export default class MesReservation extends Component {
     render() {
         return (
 
-            <ListGroupItem>
-                <Row>
-                    <Col md="6">Date Début : <strong>{this.props.dateDebut}</strong></Col>
-                    <Col md="6">Date Fin : <strong>{this.props.dateFin}</strong></Col>
-                </Row>
-                <Row>
-                    <Col md="auto">Numéro chambre : <strong>{this.props.numChambre}</strong></Col>
-                    <Col md="auto">Prix : <strong>{this.props.prix}</strong></Col>
-                </Row>
-                <Row>
-                    <Col md="auto">Hotel : <strong>{this.props.nomHotel}</strong></Col>
-                    <Col md="auto">Adresse Hotel : <strong>{this.props.adresseHotel}</strong></Col>
-                </Row>
-                <Row>
-                    <Col md="6">Ville : <strong>{this.props.Ville}</strong></Col>
-                    <Col md={{ size: 6, push: 1 }} >
-                        <Button color="danger">Annuler</Button>
-                    </Col>
-                </Row>
 
+            <ListGroupItem>
+                <Table>
+                    <tbody>
+                        <tr>
+                            <td>Date Début : </td>
+                            <td>{this.props.dateDebut}</td>
+                        </tr>
+                        <tr>
+                            <td>Date Fin :</td>
+                            <td>{this.props.dateFin}</td>
+                        </tr>
+                        <tr>
+                            <td>Numéro chambre :</td>
+                            <td>{this.props.numChambre}</td>
+                        </tr>
+                        <tr>
+                            <td>Prix :</td>
+                            <td>{this.props.prix}</td>
+                        </tr>
+                        <tr>
+                            <td>Hotel :</td>
+                            <td>{this.props.nomHotel}</td>
+                        </tr>
+                        <tr>
+                            <td>Adresse :</td>
+                            <td>{this.props.adresseHotel}</td>
+                        </tr>
+                        <tr>
+                            <td>Ville :</td>
+                            <td>{this.props.Ville}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><Button color="danger">Annuler</Button></td>
+                        </tr>
+                    </tbody>
+                </Table>
             </ListGroupItem >
 
         );

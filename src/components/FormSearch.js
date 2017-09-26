@@ -70,7 +70,8 @@ export default class FormSearch extends Component {
             messageVisible: !this.state.messageVisible
         })
 
-        if (this.state.dateArrive == "" || this.state.dateDepart == "" || this.state.InputValue == "") {
+        if (this.state.dateArrive == "" || this.state.dateDepart == "" || this.state.InputValue == ""
+            || this.state.valueAdulte=='0' || this.state.valueEnfant=='0') {
             console.log('i stop submit')
             this.setState({
                 message: 'Vous devez remplir tous les champs'

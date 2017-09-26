@@ -57,20 +57,18 @@ export default class PanierElement extends Component {
                         <Col md="2"><img src="http://www.freeiconspng.com/uploads/red-location-icon-1.png"
                             height="15" width="10" />
                         </Col>
-                        <Col md="10">
+                        <Col md="8">
                             <h7><p className="adresseHotel">{this.state.adressHotel}</p></h7>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col md="3"><p>{this.state.nbrAdulte} adulte(s)</p></Col>
-                        <Col md="3"><p>{this.state.nbrEnfant} enfant(s)</p></Col>
-                        <Col md="3"><p>{this.state.nbrChambre} chambre(s)</p></Col>
-                        <Col md="3">
+                        <Col md="2">
                             <h3><Badge color="danger">
                                 <strong>€ {this.props.prix}</strong>
                             </Badge>{' '}</h3>
                         </Col>
                     </Row>
+                    
+                       
+                 
                     <Row>
 
                         <Col md="7"></Col>

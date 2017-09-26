@@ -16,6 +16,12 @@ export default class Header extends Component {
         }
 
         this.getStateConnexion = this.getStateConnexion.bind(this)
+        this.giveMeToken = this.giveMeToken.bind(this)
+    }
+
+    giveMeToken(token)
+    {
+        this.props.giveMeMyToken(token)
     }
 
     getStateConnexion(state) {
@@ -27,7 +33,7 @@ export default class Header extends Component {
         return (
             <div>
                 <Row>
-                    <Col><SignInWindow getStateConnexionProps={this.getStateConnexion}></SignInWindow></Col>
+                    <Col><SignInWindow getToken={this.giveMeToken} getStateConnexionProps={this.getStateConnexion}></SignInWindow></Col>
                 </Row>
                 <Row>
                     <Col md="2">

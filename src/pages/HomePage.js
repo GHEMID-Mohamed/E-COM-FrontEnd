@@ -16,13 +16,21 @@ export default class HomePage extends Component {
             connexionState: false,
             Data: false,
             dateDeb: '',
-            dateFinn: ''
+            dateFinn: '',
+            tokenState: ''
         }
 
         this.goListenToButtonSearch = this.goListenToButtonSearch.bind(this)
         this.buttonNewClickedd = this.buttonNewClickedd.bind(this)
         this.getConnexionState2 = this.getConnexionState2.bind(this)
         this.getDates = this.getDates.bind(this)
+        this.myToken = this.myToken.bind(this)
+    }
+
+    myToken(token) {
+        this.setState({
+            tokenState: token
+        })
     }
 
     getDates(dateDebut, dateFin) {
@@ -60,7 +68,7 @@ export default class HomePage extends Component {
     render() {
         return (
             <div>
-                <Header getStateConnexionProp3={this.getConnexionState2}></Header>
+                <Header giveMeMyToken={this.myToken} getStateConnexionProp3={this.getConnexionState2}></Header>
                 <hr />
                 <br />
                 {this.state.StepsBookingTabsVisible ? <StepsBookingTabs
@@ -69,6 +77,7 @@ export default class HomePage extends Component {
                     stateConnexionProp={this.state.connexionState}
                     dateDebProp={this.state.dateDeb}
                     dateFinProp={this.state.dateFinn}
+                    token={this.state.tokenState}
                 ></StepsBookingTabs> : null}
                 {this.state.BodyHomeVisible ? <BodyHome goListenToButtonSearchProp={this.goListenToButtonSearch}
                                                         goGetDatesProp={this.getDates}

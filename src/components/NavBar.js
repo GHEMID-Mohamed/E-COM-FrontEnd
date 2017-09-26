@@ -11,10 +11,10 @@ export default class NavBar extends Component {
                         <NavLink href="/" active>Accueil</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/administrator">Nos meilleures offres</NavLink>
+                        <NavLink href="/">Nos meilleures offres</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/hotels">Nos Hôtels</NavLink>
+                        <NavLink href="/">Nos Hôtels</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="/contacterNous">Contacter nous</NavLink>

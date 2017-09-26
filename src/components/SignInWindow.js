@@ -39,6 +39,8 @@ export default class ModalExample extends Component {
         this.props.getStateConnexionProps(state)
         console.log('state from signInWindows '+state)
 
+        this.props.getToken(token)
+
     }
 
     listenToDeconnexion(state) {

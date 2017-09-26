@@ -172,9 +172,11 @@ export default class PayementForm extends Component {
             }).then(data => {
                 if (data.code == '201') {
                     {
-                    
-                    this.props.listenToPayer()
+                        this.props.listenToPayer()
                     }
+                }
+                else {
+                    console.log('booking failed')
                 }
                 //console.log(data)
             }).catch((error) => {

@@ -62,7 +62,7 @@ export default class StepsBookingTabs extends Component {
             activeTab: '4'
         })
 
-        console.log(token)
+        console.log(token+' from Booking')
         console.log(this.props.dateDebProp)
         console.log(this.props.dateFinProp)
         console.log(this.state.idChambre)
@@ -131,9 +131,11 @@ export default class StepsBookingTabs extends Component {
 
         this.setState({
             connexionState: nextProps.stateConnexionProp,
-            data: nextProps.dataProp
+            data: nextProps.dataProp,
+            tokenState: nextProps.token
         })
 
+        console.log('state last token from Tabs'+ nextProps.token)
         console.log('something has changed')
         console.log(nextProps.dataProp)
 
@@ -266,13 +268,13 @@ export default class StepsBookingTabs extends Component {
                                 token={this.state.tokenState}
                                 dateDeb={this.props.dateDebProp}
                                 dateFin={this.props.dateFinProp}
-                                listenToPayer={this.props.listenToPayerFin}
+                                listenToPayer={this.listenToPayerFin}
                             ></PayementForm> : null
                         }
                     </TabPane>
 
                     {/*Confirmation*/}
-                    <TabPane tabId="4">
+                    <TabPane tabId="5">
                         {this.state.confirmationVisible ? <Confirmation></Confirmation> : null}
                     </TabPane>
                 </TabContent>

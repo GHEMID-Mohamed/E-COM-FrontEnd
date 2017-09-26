@@ -85,7 +85,7 @@ export default class Resultat extends Component {
 
         var chambres = data.resultat.map((element, index) =>
 
-            (index == 3 || index == 6  || index == 9  || index == 9) ? <Col md="4"></Col>
+            (index == 2 || index == 5  || index == 8  || index == 11 || index == 14 ) ? <Col md="4"></Col>
             :
             <Col md="4">
                 <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"

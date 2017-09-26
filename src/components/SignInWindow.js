@@ -12,7 +12,8 @@ export default class ModalExample extends Component {
             modal: false,
             connectionState: false,
             nom: '',
-            prenom: ''
+            prenom: '',
+            tokenState: ''
         };
 
         this.toggle = this.toggle.bind(this);
@@ -27,11 +28,12 @@ export default class ModalExample extends Component {
         });
     }
 
-    getStateConnection(state, nomParam, prenomParam) {
+    getStateConnection(state, nomParam, prenomParam, token) {
         this.setState({
             connectionState: state,
             nom: nomParam,
-            prenom: prenomParam
+            prenom: prenomParam,
+            tokenState: token
         })
 
         this.props.getStateConnexionProps(state)
@@ -83,7 +85,9 @@ export default class ModalExample extends Component {
                         <Col md="8"></Col>
                         <Col md="4"><ConnectedClient listenToDeconnexionProp={this.listenToDeconnexion}
                             nomProp={this.state.nom}
-                            prenomProp={this.state.prenom} >
+                            prenomProp={this.state.prenom}
+                            token={this.state.tokenState} >
+                            
                         </ConnectedClient></Col>
                     </Row>
                 </div>

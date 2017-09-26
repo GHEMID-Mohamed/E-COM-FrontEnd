@@ -44,7 +44,7 @@ export default class StepsBookingTabs extends Component {
         this.getStateCnTb = this.getStateCnTb.bind(this)
         this.listenToPayerFin = this.listenToPayerFin.bind(this)
 
-        
+
     }
 
     listenToPayerFin() {
@@ -102,7 +102,7 @@ export default class StepsBookingTabs extends Component {
             idChambre: Number(idChambre)
         });
 
-        console.log(idChambre+' from Steps')
+        console.log(idChambre + ' from Steps')
     }
 
     listenPayerButton(idChambre) {
@@ -124,7 +124,7 @@ export default class StepsBookingTabs extends Component {
     }
 
     componentWillMount() {
-        console.log('state from steps booking tab : '+this.props.stateConnexionProp)
+        console.log('state from steps booking tab : ' + this.props.stateConnexionProp)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -191,7 +191,8 @@ export default class StepsBookingTabs extends Component {
                     <TabPane tabId="1">
                         <Row>
                             <Col sm="12">
-                                <Resultat activeOnglet={this.activeOnlget2}
+                                <Resultat
+                                    activeOnglet={this.activeOnlget2}
                                     newClickedProp={this.buttonNewClicked}
                                     dataProp={this.state.data}
                                 ></Resultat>

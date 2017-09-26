@@ -50,6 +50,7 @@ export default class InputSignIn extends React.Component {
                     connectionState: true,
                     message: ''
                 })
+                console.log('token :'+data.resultat.token)
                 this.props.getStateConnectionProp(true, data.resultat.nom, data.resultat.prenom, data.resultat.token)
             }
             else {

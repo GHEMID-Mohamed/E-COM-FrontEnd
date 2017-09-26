@@ -57,8 +57,6 @@ export default class PassOublierPage extends Component {
                             <Alert color="success">
                                 <br />
                                 <center><h5>Mot de passe envoyé à l'email</h5></center>
-                                <br />
-                                <center><InputSignIn></InputSignIn></center>
                             </Alert>
                             : null}
                         {this.state.passNotSentVisible ?

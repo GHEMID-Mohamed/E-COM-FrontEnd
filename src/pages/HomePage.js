@@ -21,7 +21,7 @@ export default class HomePage extends Component {
 
         this.goListenToButtonSearch = this.goListenToButtonSearch.bind(this)
         this.buttonNewClickedd = this.buttonNewClickedd.bind(this)
-        this.getConnexionState = this.getConnexionState.bind(this)
+        this.getConnexionState2 = this.getConnexionState2.bind(this)
         this.getDates = this.getDates.bind(this)
     }
 
@@ -32,11 +32,10 @@ export default class HomePage extends Component {
         })
     }
 
-    getConnexionState(state) {
+    getConnexionState2() {
         this.setState({
-            connexionState: state
+            connexionState: false
         })
-        console.log('state connexion is ' + state + ' from HomePage')
     }
 
     buttonNewClickedd() {
@@ -59,7 +58,7 @@ export default class HomePage extends Component {
     render() {
         return (
             <div>
-                <Header getStateConnexionProp={this.getConnexionState}></Header>
+                <Header getStateConnexionProp3={this.getConnexionState2}></Header>
                 <hr />
                 <br />
                 {this.state.StepsBookingTabsVisible ? <StepsBookingTabs

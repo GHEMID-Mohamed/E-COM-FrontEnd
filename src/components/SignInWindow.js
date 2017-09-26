@@ -38,13 +38,13 @@ export default class ModalExample extends Component {
 
     }
 
-    listenToDeconnexion(state) {
+    listenToDeconnexion() {
         this.setState({
-            connectionState: state,
+            connectionState: false,
             modal: false
         })
 
-        this.props.getStateConnexionProps(state)
+        this.props.getStateConnexionProps()
     }
 
 

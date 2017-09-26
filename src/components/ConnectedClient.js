@@ -23,7 +23,7 @@ export default class ConnectedClient extends Component {
     }
 
     handleClick() {
-        this.props.listenToDeconnexionProp(false)
+        this.props.listenToDeconnexionProp()
     }
 
     

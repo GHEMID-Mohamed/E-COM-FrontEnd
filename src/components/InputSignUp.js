@@ -23,7 +23,7 @@ export default class InputSignUp extends React.Component {
             codePostal: '',
             messageMotPasse: '',
             messageFin: '',
-            colorAltert: ''
+            colorAltert: '',
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -149,7 +149,9 @@ export default class InputSignUp extends React.Component {
                         messageFin: data.resultat,
                         colorAltert: 'success'
                     })
+                    this.props.getStateProp(true)
                     this.props.getStateConnectionProp(true, data.resultat.nom, data.resultat.prenom)
+                    window.scrollTo(0, 0)
                 }
                 else  {
                     this.setState({

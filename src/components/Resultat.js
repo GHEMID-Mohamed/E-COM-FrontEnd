@@ -35,7 +35,7 @@ export default class Resultat extends Component {
 
     listenReserverButton(prix, nomHotel, adressHotel, nbrAdulte, nbrEnfant, nbrChambre, nbrLit, idChambre) {
 
-        console.log(idChambre+' from Resultat')
+        console.log(idChambre + ' from Resultat')
         console.log('button was clicked from resultats')
 
         this.props.activeOnglet(
@@ -69,7 +69,7 @@ export default class Resultat extends Component {
 
         })
 
-        console.log(idChambre+' from resultat')
+        console.log(idChambre + ' from resultat')
 
 
     }
@@ -81,14 +81,19 @@ export default class Resultat extends Component {
         var data = this.props.dataProp
         var i = 0
         var once = true
-        var chambres = data.resultat.map((element) =>
+        console.log('lenght :' + Object.keys(data.resultat).length)
+
+        var chambres = data.resultat.map((element, index) =>
+
+            (index == 3 || index == 6  || index == 9  || index == 9) ? <Col md="4"></Col>
+            :
             <Col md="4">
                 <CardChambre listenButton={this.goListenButtonInChambre} src="http://www.martigues-hotel.com/en/files/2012/11/chambre-double-twin.jpg"
                     nombreLits={element.nbLits}
                     prix={element.prix}
                     nomHotel={element.hotel.nom}
                     adresseHotel={element.hotel.adresse}
-                    idChambre={element.id} 
+                    idChambre={element.id}
                 >
                 </CardChambre>
             </Col>
@@ -118,15 +123,14 @@ export default class Resultat extends Component {
                         </Button>
                     </Col>
 
-
                 </Row>
+
+
 
 
 
                 {/* Chambre trouvé */}
                 <Row>
-                    {chambres}
-
                     <Col md="4">
                         <Panier
                             listenReserverButton2={this.listenReserverButton}
@@ -141,7 +145,25 @@ export default class Resultat extends Component {
                         >
                         </Panier>
                     </Col>
+                    {chambres}
                 </Row>
+
+
+                {/*<Col md="4">
+                        <Panier
+                            listenReserverButton2={this.listenReserverButton}
+                            prix={this.state.prix}
+                            nomHotel={this.state.nomHotel}
+                            adressHotel={this.state.adressHotel}
+                            nbrAdulte={this.state.nbrAdulte}
+                            nbrEnfant={this.state.nbrEnfant}
+                            nbrChambre={this.state.nbrChambre}
+                            nbrLit={this.state.nbrLit}
+                            idChambre={this.state.idChambre}
+                        >
+                        </Panier>
+                    </Col>*/}
+
 
             </div>
         );

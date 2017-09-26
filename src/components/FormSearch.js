@@ -169,7 +169,7 @@ export default class FormSearch extends Component {
                                 onChange={this.handleChangeAdulte}
                                 required
                             >
-                                <option></option>
+                                <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -186,7 +186,7 @@ export default class FormSearch extends Component {
                                 onChange={this.handleChangeEnfant}
                                 placeholder="nbr enfant" required
                             >
-                                <option></option>
+                                <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>

@@ -16,7 +16,7 @@ export default class AdministratorPage extends Component {
                     <center><h3>Espace Admnistrateur</h3></center>
                     <hr />
                     <br />
-                    <FormSearch></FormSearch>
+                    <TabsAdministrator></TabsAdministrator>
                     <br />
                     <br />
                 </Container>

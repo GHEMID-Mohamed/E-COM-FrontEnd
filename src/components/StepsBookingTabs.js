@@ -160,7 +160,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '1' })}
-                            onClick={() => { this.toggle('1'); }}
+                            //onClick={() => { this.toggle('1'); }}
                         >
                             Resultat de recherche
                         </NavLink>
@@ -168,7 +168,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '2' })}
-                            onClick={() => { this.toggle('2'); }}
+                            //onClick={() => { this.toggle('2'); }}
                         >
                             Récapitulatif
                         </NavLink>
@@ -176,7 +176,7 @@ export default class StepsBookingTabs extends Component {
                     {!this.state.connexionState ? <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '3' })}
-                            onClick={() => { this.toggle('3'); }}
+                            //onClick={() => { this.toggle('3'); }}
                         >
                             Identification
                         </NavLink>
@@ -184,7 +184,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '4' })}
-                            onClick={() => { this.toggle('4'); }}
+                            //onClick={() => { this.toggle('4'); }}
                         >
                             Paiement
                         </NavLink>
@@ -193,7 +193,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '5' })}
-                            onClick={() => { this.toggle('5'); }}
+                            //onClick={() => { this.toggle('5'); }}
                         >
                             Confirmation
                         </NavLink>

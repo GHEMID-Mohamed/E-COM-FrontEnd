@@ -159,6 +159,7 @@ export default class InputSignUp extends React.Component {
                         messageFin: data.resultat,
                         colorAltert: 'danger'
                     })
+                    window.scrollTo(0, 0)
                 }
                 //console.log(data)
             }).catch((error) => {

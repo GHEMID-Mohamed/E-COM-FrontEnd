@@ -71,7 +71,7 @@ export default class FormSearch extends Component {
         })
 
         if (this.state.dateArrive == "" || this.state.dateDepart == "" || this.state.InputValue == ""
-            || this.state.valueAdulte=='0' || this.state.valueEnfant=='0') {
+            || (this.state.valueAdulte=='0' && this.state.valueEnfant=='0')) {
             console.log('i stop submit')
             this.setState({
                 message: 'Vous devez remplir tous les champs'

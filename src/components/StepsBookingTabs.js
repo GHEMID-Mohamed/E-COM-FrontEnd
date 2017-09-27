@@ -46,6 +46,20 @@ export default class StepsBookingTabs extends Component {
         this.getStateCnTb = this.getStateCnTb.bind(this)
         this.listenToPayerFin = this.listenToPayerFin.bind(this)
         this.handeSignUp = this.handeSignUp.bind(this)
+        this.backToTwo = this.backToTwo.bind(this)
+        this.backToThree = this.backToThree.bind(this)
+    }
+
+    backToTwo() {
+        this.setState({
+            activeTab: '2'
+        })
+    }
+
+    backToThree() {
+        this.setState({
+            activeTab: '3'
+        })
     }
 
     handeSignUp(state, nom, prenom) {
@@ -160,7 +174,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '1' })}
-                            //onClick={() => { this.toggle('1'); }}
+                        //onClick={() => { this.toggle('1'); }}
                         >
                             Resultat de recherche
                         </NavLink>
@@ -168,7 +182,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '2' })}
-                            //onClick={() => { this.toggle('2'); }}
+                        //onClick={() => { this.toggle('2'); }}
                         >
                             Récapitulatif
                         </NavLink>
@@ -176,7 +190,7 @@ export default class StepsBookingTabs extends Component {
                     {!this.state.connexionState ? <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '3' })}
-                            //onClick={() => { this.toggle('3'); }}
+                        //onClick={() => { this.toggle('3'); }}
                         >
                             Identification
                         </NavLink>
@@ -184,7 +198,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '4' })}
-                            //onClick={() => { this.toggle('4'); }}
+                        //onClick={() => { this.toggle('4'); }}
                         >
                             Paiement
                         </NavLink>
@@ -193,7 +207,7 @@ export default class StepsBookingTabs extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '5' })}
-                            //onClick={() => { this.toggle('5'); }}
+                        //onClick={() => { this.toggle('5'); }}
                         >
                             Confirmation
                         </NavLink>
@@ -234,8 +248,22 @@ export default class StepsBookingTabs extends Component {
                         ></Recapitulatif>
                     </TabPane>
 
-                    {/*Payement*/}
+                    {/*Récaputulatif*/}
                     <TabPane tabId="3">
+                        <br />
+                        <hr />
+                        <Button color="warning"
+                            onClick={this.backToTwo}>
+                            <Row>
+                                <Col md="1">
+                                </Col>
+                                <img src="https://cdn2.iconfinder.com/data/icons/perfect-flat-icons-2/512/Undo_arrow_left_edit_back_cancel_rotate_delete.png"
+                                    height="20" width="20" />
+                                <Col>Revenir en arrière</Col>
+                            </Row>
+                        </Button>
+                        <br />
+                        <hr />
                         <br />
                         <h5>Veuillez vous connecter ou vous s'inscrire pour pouvoir continuer</h5>
                         <hr />
@@ -286,6 +314,20 @@ export default class StepsBookingTabs extends Component {
                     </TabPane>
 
                     <TabPane tabId="4">
+                        <br />
+                        <hr />
+                        <Button color="warning"
+                            onClick={this.backToThree}>
+                            <Row>
+                                <Col md="1">
+                                </Col>
+                                <img src="https://cdn2.iconfinder.com/data/icons/perfect-flat-icons-2/512/Undo_arrow_left_edit_back_cancel_rotate_delete.png"
+                                    height="20" width="20" />
+                                <Col>Revenir en arrière</Col>
+                            </Row>
+                        </Button>
+                        <br />
+                        <hr />
                         {this.state.connexionState ?
                             <PayementForm
                                 prix={this.state.prix}

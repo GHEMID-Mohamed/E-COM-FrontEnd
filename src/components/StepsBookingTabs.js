@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     TabContent, TabPane, Nav, NavItem, NavLink, Card, Button,
-    CardTitle, CardText, Row, Col, Collapse, CardBlock, Alert
+    CardTitle, CardText, Row, Col, Collapse, CardBlock, Alert, Badge
 } from 'reactstrap'
 import classnames from 'classnames';
 import Resultat from '../components/Resultat'
@@ -176,7 +176,8 @@ export default class StepsBookingTabs extends Component {
                             className={classnames({ active: this.state.activeTab === '1' })}
                         //onClick={() => { this.toggle('1'); }}
                         >
-                            Resultat de recherche
+                            Resultat de recherche &nbsp;
+                            <Badge color="info" pill>1</Badge>
                         </NavLink>
                     </NavItem>
                     <NavItem>
@@ -184,7 +185,8 @@ export default class StepsBookingTabs extends Component {
                             className={classnames({ active: this.state.activeTab === '2' })}
                         //onClick={() => { this.toggle('2'); }}
                         >
-                            Récapitulatif
+                            Récapitulatif &nbsp;
+                            <Badge color="info" pill>2</Badge>
                         </NavLink>
                     </NavItem>
                     {!this.state.connexionState ? <NavItem>
@@ -192,7 +194,8 @@ export default class StepsBookingTabs extends Component {
                             className={classnames({ active: this.state.activeTab === '3' })}
                         //onClick={() => { this.toggle('3'); }}
                         >
-                            Identification
+                            Identification &nbsp;
+                            <Badge color="info" pill>3</Badge>
                         </NavLink>
                     </NavItem> : null}
                     <NavItem>
@@ -200,7 +203,8 @@ export default class StepsBookingTabs extends Component {
                             className={classnames({ active: this.state.activeTab === '4' })}
                         //onClick={() => { this.toggle('4'); }}
                         >
-                            Paiement
+                            Paiement &nbsp;
+                            <Badge color="info" pill>4</Badge>
                         </NavLink>
                     </NavItem>
 
@@ -209,7 +213,8 @@ export default class StepsBookingTabs extends Component {
                             className={classnames({ active: this.state.activeTab === '5' })}
                         //onClick={() => { this.toggle('5'); }}
                         >
-                            Confirmation
+                            Confirmation &nbsp;
+                            <Badge color="info" pill>5</Badge>
                         </NavLink>
                     </NavItem>
                 </Nav>
